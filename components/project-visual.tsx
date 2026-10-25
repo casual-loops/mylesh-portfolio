@@ -48,7 +48,7 @@ export function ProjectVisual({ slug }: { slug: string }) {
         </defs>
         <text x="54" y="45" fill="#A9B9C4" fontFamily="monospace" fontSize="9" letterSpacing="1.5">THE HOME LAB</text>
         <path d="M54 55H118" stroke="#76A9C6" strokeOpacity=".45"/>
-        <g transform="translate(132 19)">
+        <g transform="translate(164 32) scale(0.82)">
           <path d="M14 8L170 8L185 21L185 180L170 192L14 192L0 180L0 21Z" fill="#0D1115" stroke="#617587" strokeWidth="1.2"/>
           <path d="M14 8L170 8L185 21L15 21Z" fill="#26303A" opacity=".7"/>
           <rect x="15" y="26" width="155" height="157" rx="3" fill="url(#lab-chassis)" stroke="#435462"/>
