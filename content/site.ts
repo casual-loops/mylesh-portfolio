@@ -5,7 +5,7 @@ export const site = {
   // Replace these values when your public profile URLs and contact address are ready.
   github: 'https://github.com/',
   linkedin: 'https://www.linkedin.com/',
-  email: '',
+  email: 'myles@pyxishl.net',
 };
 export type Project = {
   slug: string; name: string; tagline: string; summary: string;
