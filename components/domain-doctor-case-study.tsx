@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft, ArrowUpRight, GitBranch, ShieldCheck, ServerCog, Layers, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, GitBranch, ShieldCheck, ServerCog, Layers } from 'lucide-react';
 import { Reveal } from '@/components/reveal';
 
 const diagnostics = [
@@ -29,7 +29,6 @@ export default function DomainDoctorCaseStudy() {
             <p className="dd-hero-subtitle">A clearer look at what happens when you visit a domain.</p>
             <p className="dd-hero-description">A web-based diagnostic tool that brings DNS, TLS, HTTP behavior, and security headers together in one report. Built to make the invisible layers of the web easier to examine and understand.</p>
             <div className="dd-hero-links">
-              <a href="https://github.com/casual-loops" target="_blank" rel="noreferrer">GitHub profile <ArrowUpRight size={16} aria-hidden="true" /></a>
               <a href="#dd-system">Explore the architecture <ArrowUpRight size={16} aria-hidden="true" /></a>
             </div>
           </div>
@@ -90,7 +89,7 @@ export default function DomainDoctorCaseStudy() {
         <div className="dd-section-heading"><span>03 <b>//</b></span> UNDER THE HOOD</div>
         <Reveal className="dd-heading-row"><h2>Built as a service, <em>not just a script.</em></h2><p>The project connects user-facing design with backend diagnostics and the infrastructure required to host an application reliably.</p></Reveal>
         <div className="dd-architecture">
-          <div className="dd-architecture-label"><Layers size={18} aria-hidden="true" /> SYSTEM OVERVIEW <span>CONCEPTUAL · SIMPLIFIED</span></div>
+          <div className="dd-architecture-label"><Layers size={18} aria-hidden="true" /> SYSTEM COMPONENTS <span>CONCEPTUAL · NOT A REQUEST FLOW</span></div>
           <div className="dd-architecture-track">
             {architecture.map((a,index)=><div className="dd-architecture-step" key={a.id}>
               <span>{a.id}</span><h3>{a.title}</h3><strong>{a.meta}</strong><p>{a.desc}</p>{index<architecture.length-1&&<div className="dd-architecture-arrow" aria-hidden="true">→</div>}
