@@ -84,7 +84,14 @@ export default function Experience() {
         <p>My path through operations, service delivery, reporting, and systems administration has taught me to look beyond individual problems and understand the technology, people, and processes surrounding them.</p>
       </header>
 
-      <section className="experience-history" aria-labelledby="experience-history-heading">
+      <nav className="experience-section-nav" aria-label="Experience page sections">
+        <a href="#professional-history"><span>01 //</span> Professional history</a>
+        <a href="#self-directed"><span>02 //</span> Self-directed engineering</a>
+        <a href="#skills-technologies"><span>03 //</span> Skills & technologies</a>
+        <a href="#certifications"><span>04 //</span> Certifications</a>
+      </nav>
+
+      <section id="professional-history" className="experience-history" aria-labelledby="experience-history-heading">
         <div className="experience-history-heading">
           <h2 id="experience-history-heading"><span>01 <b>//</b></span> PROFESSIONAL HISTORY</h2>
           <span>SELECTED RESPONSIBILITIES & CONTRIBUTIONS</span>
@@ -109,7 +116,7 @@ export default function Experience() {
           </Reveal>
         ))}
       </section>
-      <section className="experience-independent" aria-labelledby="experience-independent-heading">
+      <section id="self-directed" className="experience-independent" aria-labelledby="experience-independent-heading">
         <div className="experience-history-heading">
           <h2 id="experience-independent-heading"><span>02 <b>//</b></span> SELF-DIRECTED ENGINEERING</h2>
           <span>LEARNING BY BUILDING</span>
@@ -138,7 +145,7 @@ export default function Experience() {
           </Reveal>
         </div>
       </section>
-      <section className="experience-skills" aria-labelledby="experience-skills-heading">
+      <section id="skills-technologies" className="experience-skills" aria-labelledby="experience-skills-heading">
         <div className="experience-history-heading">
           <h2 id="experience-skills-heading"><span>03 <b>//</b></span> SKILLS & TECHNOLOGIES</h2>
           <span>TOOLS, PLATFORMS & PRACTICES</span>
@@ -161,7 +168,7 @@ export default function Experience() {
           ))}
         </div>
       </section>
-      <section className="experience-certifications" aria-labelledby="experience-certifications-heading">
+      <section id="certifications" className="experience-certifications" aria-labelledby="experience-certifications-heading">
         <div className="experience-history-heading">
           <h2 id="experience-certifications-heading"><span>04 <b>//</b></span> CERTIFICATIONS</h2>
           <span>PROFESSIONAL CREDENTIALS</span>
