@@ -1249,3 +1249,12 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
 @media(max-width:850px){.tp-hero-grid{grid-template-columns:1fr;}.tp-lifecycle-visual{max-width:650px;}.tp-feature-intro{grid-template-columns:1fr;gap:20px;}}
 @media(max-width:700px){.tp-stack-grid,.tp-capability-grid{grid-template-columns:1fr;}.tp-lifecycle-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.tp-next{flex-direction:column;align-items:flex-start;}}
 @media(max-width:470px){.tp-hero h1{font-size:clamp(52px,15vw,80px);}.tp-lifecycle-grid,.tp-engineering-focus{grid-template-columns:1fr;}.tp-visual-top{font-size:9px;}}
+
+/* Tapestree: actual product homepage screenshot in the opening case-study view. */
+.tp-product-shot{min-width:0;margin:0;border:1px solid rgba(118,169,198,.3);background:#0D1116;overflow:hidden;}
+.tp-shot-top{display:flex;justify-content:space-between;gap:12px;padding:13px 18px;border-bottom:1px solid var(--line);font:10px monospace;letter-spacing:.1em;color:#B2C0CB;}
+.tp-shot-top span:last-child{color:#D6A34F;}
+.tp-product-shot img{display:block;width:100%;height:auto;max-height:550px;object-fit:contain;background:#0D1116;}
+.tp-product-shot figcaption{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:13px 18px;border-top:1px solid var(--line);font:10px monospace;letter-spacing:.08em;color:#A6B9C5;}
+.tp-product-shot figcaption span{color:#BBA0CC;}
+.tp-lifecycle-note{font:11px monospace;color:#D6A34F;letter-spacing:.1em;margin:0 0 17px;}
