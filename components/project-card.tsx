@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowUpRight, Box, Globe2, Server, Network } from 'lucide-react';
+import { ArrowUpRight, Network } from 'lucide-react';
+import { ProjectVisual } from '@/components/project-visual';
 import type { Project } from '@/content/site';
 
 const logos: Record<string, string> = {
@@ -35,20 +36,19 @@ function TechnologyLogo({ name }: { name: string }) {
 }
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const Icon = project.slug === 'domain-doctor' ? Globe2 : project.slug === 'tapestree' ? Box : Server;
   return (
     <Link className="project-card" href={`/work/${project.slug}`}>
       <div className={`project-art art-${project.slug}`}>
         <span className="project-number">0{index + 1}</span>
-        <Icon size={62} strokeWidth={0.65} />
+        <ProjectVisual slug={project.slug} />
         <span className="project-status">{project.status}</span>
       </div>
       <div className="project-card-body">
-        <div className="project-name-row"><h3>{project.name}</h3><ArrowUpRight size={18} /></div>
-        <p>{project.summary}</p>
-        <div className="tech-logos" aria-label="Technologies used">
+        <div className="project-name-row"><h3>{project.name}</h3><span className="project-open" aria-hidden="true"><ArrowUpRight size={19} /></span></div>
+        <p className="project-summary">{project.summary}</p>
+        <div className="project-card-meta"><span className="project-areas">{project.areas.join(" // ")}</span><div className="tech-logos" aria-label="Technologies used">
           {project.technologies.map(name => <TechnologyLogo key={name} name={name} />)}
-        </div>
+        </div></div>
       </div>
     </Link>
   );
