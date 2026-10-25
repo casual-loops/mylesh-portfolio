@@ -38,15 +38,15 @@ function TechnologyLogo({ name }: { name: string }) {
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <Link className={`project-card project-card-${project.slug}`} href={`/work/${project.slug}`}>
-      <div className={`project-art art-${project.slug}`}>
+      <div className={`project-art art-${project.slug}`} data-visual="technical-diagram">
         <span className="project-number">0{index + 1}</span>
         <ProjectVisual slug={project.slug} />
-        <span className="project-status">{project.status}</span>
+        <span className="project-status" data-status={project.slug}>{project.status}</span>
       </div>
       <div className="project-card-body">
         <div className="project-name-row"><h3>{project.name}</h3><span className="project-open" aria-hidden="true"><ArrowUpRight size={19} /></span></div>
         <p className="project-summary">{project.summary}</p>
-        <div className="project-card-meta"><span className="project-areas">{project.areas.join(" // ")}</span><div className="tech-logos" aria-label="Technologies used">
+        <div className="project-card-meta"><span className="project-areas">{project.areas.join(" // ")}</span><div className="tech-logos" aria-label="Technology logos">
           {project.technologies.map(name => <TechnologyLogo key={name} name={name} />)}
         </div></div>
       </div>
