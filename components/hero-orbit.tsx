@@ -10,13 +10,14 @@ export function HeroOrbit(){return <svg className="hero-orbit" viewBox="0 0 900 
 <g fill="#C7D1DB" opacity=".55"><circle cx="121" cy="110" r="1"/><circle cx="782" cy="91" r="1"/><circle cx="70" cy="490" r="1.2"/><circle cx="835" cy="590" r="1"/><circle cx="290" cy="811" r="1"/></g>
 <circle cx="332" cy="218" r="153" fill="url(#glow)"/>
 <circle cx="490" cy="452" r="303" fill="none" stroke="#8299AE" strokeOpacity=".08" strokeWidth="15"/>
+<g className="orbit-motion-secondary" fill="none" stroke="#8A9DAE" strokeWidth="1"><ellipse cx="490" cy="452" rx="345" ry="379" transform="rotate(25 490 452)" strokeDasharray="3 9" opacity=".3"/><circle cx="636" cy="107" r="3.5" fill="#76A9C6" stroke="none"/><circle cx="490" cy="452" r="354" strokeDasharray="2 8" opacity=".22"/></g>
 <circle cx="490" cy="452" r="295" fill="url(#planet)"/>
 <g clipPath="url(#clip)" fill="none" stroke="#94A6B6" strokeOpacity=".21" strokeWidth="1">
 <path d="M165 312 Q282 268 398 315 T615 344 T790 321 M178 426 Q298 394 410 434 T635 434 T792 416 M170 525 Q270 489 419 531 T648 527 T795 519 M190 626 Q330 588 466 629 T747 634"/>
 <path d="M354 150 Q272 391 393 751 M473 151 Q412 408 551 753 M578 170 Q541 396 661 718" opacity=".5"/>
 </g>
 <circle cx="490" cy="452" r="295" fill="none" stroke="url(#rim)" strokeWidth="2"/>
-<g className="orbit-motion-primary" fill="none" stroke="#8A9DAE" strokeWidth="1"><ellipse cx="490" cy="452" rx="435" ry="201" transform="rotate(-23 490 452)" opacity=".78"/><circle cx="890" cy="282" r="4" fill="#D56668" stroke="none"/></g><g className="orbit-motion-secondary" fill="none" stroke="#8A9DAE" strokeWidth="1"><ellipse cx="490" cy="452" rx="345" ry="379" transform="rotate(25 490 452)" strokeDasharray="3 9" opacity=".3"/><circle cx="636" cy="107" r="3.5" fill="#76A9C6" stroke="none"/><circle cx="490" cy="452" r="354" strokeDasharray="2 8" opacity=".22"/></g><g fill="none" stroke="#8A9DAE" strokeWidth="1"><path d="M490 76 V126 M490 774 V846 M68 452 H137 M840 452 H882" opacity=".4"/></g>
+<g fill="none" stroke="#8A9DAE" strokeWidth="1"><path d="M490 76 V126 M490 774 V846 M68 452 H137 M840 452 H882" opacity=".4"/></g>
 <g fill="#E6E8ED" stroke="#96AABC"><circle cx="490" cy="96" r="4"/><circle cx="490" cy="809" r="5" fill="#141416"/><circle cx="780" cy="258" r="4"/><circle cx="184" cy="646" r="3"/></g>
 <circle cx="182" cy="628" r="19" fill="#33302F" stroke="#D56668"/><circle cx="820" cy="267" r="12" fill="#252527" stroke="#D56668"/>
 <g fill="none" stroke="#8A9AA9" opacity=".7"><path d="M238 225 H179 L156 199 H107 M778 261 H822 L845 235 H880 M184 649 L157 696 H95 M768 649 L802 690 H872"/></g>
