@@ -371,3 +371,62 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
   .orbit-mark-track-blue{transform:rotate(225deg);}
   .site-header .header-nav-link{transition:none!important;}
 }
+
+/* Hero identity v4: direct professional introduction and precise color accents. */
+.eyebrow-divider{color:var(--accent-ochre)!important;font-weight:600;letter-spacing:.02em;}
+.hero-disciplines span+span::before{
+  content:"//";
+  color:var(--accent-ochre);
+  font-weight:600;
+  letter-spacing:.02em;
+  margin:0 14px;
+}
+.hero-copy{width:min(800px,53%);}
+.hero h1{font-size:clamp(52px,4.9vw,87px);line-height:1.08;letter-spacing:-.065em;}
+.hero h1 .hero-accent-red{color:#D56668;}
+.hero h1 .hero-accent-blue{color:#76A9C6;}
+.hero-lead{max-width:570px;font-size:clamp(17px,1.27vw,21px);}
+.hero-actions{align-items:stretch;gap:14px;}
+.hero-cta{
+  min-height:62px;
+  gap:24px;
+  padding:0 16px 0 23px;
+  border-radius:3px;
+  position:relative;
+  overflow:hidden;
+  justify-content:space-between;
+  font-family:var(--font-display);
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:.015em;
+}
+.hero-cta-label{display:inline-flex;align-items:center;gap:15px;white-space:nowrap;}
+.hero-cta-prefix{font-family:monospace;font-size:10px;font-weight:600;letter-spacing:.08em;color:var(--accent-ochre);}
+.hero-cta-arrow{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid currentColor;border-radius:2px;transition:transform .25s ease,background .25s ease;}
+.hero-cta:hover .hero-cta-arrow{transform:translateX(3px);}
+.hero-cta-primary{background:#E7E9EC;color:#14171B;border:1px solid #E7E9EC;}
+.hero-cta-primary .hero-cta-prefix{color:#926021;}
+.hero-cta-primary .hero-cta-arrow{border-color:rgba(20,23,27,.22);}
+.hero-cta-primary:hover{background:#f5f7fa;box-shadow:0 14px 32px rgba(118,169,198,.12);}
+.hero-cta-secondary{background:rgba(17,18,21,.75);border:1px solid rgba(118,169,198,.6);min-width:190px;}
+.hero-cta-secondary .hero-cta-arrow{border-color:rgba(118,169,198,.3);color:var(--accent-sage);}
+.hero-cta-secondary:hover{border-color:var(--accent-sage);background:rgba(118,169,198,.08);}
+@media(max-width:1100px){
+ .hero-copy{width:min(680px,62%);}
+ .hero h1{font-size:clamp(45px,5vw,70px);}
+}
+@media(max-width:700px){
+ .hero-copy{width:100%;}
+ .hero h1{font-size:clamp(39px,8.8vw,62px);}
+ .hero-disciplines span+span::before{margin:0 8px;}
+ .hero-cta{min-height:53px;padding:0 11px 0 14px;gap:12px;font-size:13px;}
+ .hero-cta-label{gap:8px;}
+ .hero-cta-arrow{width:30px;height:30px;}
+}
+@media(max-width:410px){
+ .hero-cta-prefix{display:none;}
+ .hero-disciplines span+span::before{display:none;}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-cta-arrow{transition:none!important;}
+}
