@@ -1019,3 +1019,34 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
 .experience-next{scroll-margin-top:110px;}
 .experience-next a{gap:10px;}
 @media(prefers-reduced-motion:reduce){.experience-resume-link{transition:none;}}
+
+/* Global résumé download CTA in primary navigation. */
+.site-header .header-nav .header-resume-cta{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ gap:9px;
+ min-height:39px;
+ padding:8px 15px;
+ margin-left:8px;
+ border:1px solid #76A9C6;
+ background:rgba(118,169,198,.09);
+ color:#E3EFF6;
+ font-size:13px;
+ font-weight:500;
+ line-height:1;
+ white-space:nowrap;
+ transition:background .2s,border-color .2s,color .2s;
+}
+.site-header .header-nav .header-resume-cta::after{display:none;}
+.site-header .header-nav .header-resume-cta svg{color:#D6A34F;flex-shrink:0;}
+.site-header .header-nav .header-resume-cta:hover{background:rgba(118,169,198,.2);border-color:#ADD5ED;color:#FFF;}
+.site-header .header-nav .header-resume-cta:focus-visible{outline:2px solid #ADD5ED;outline-offset:3px;}
+@media(max-width:700px){
+ .site-header .header-nav .header-resume-cta{min-height:34px;padding:7px 9px;margin-left:2px;gap:5px;font-size:11px;}
+ .site-header .header-nav .header-resume-cta svg{width:14px;height:14px;}
+}
+@media(max-width:410px){
+ .site-header .header-nav .header-resume-cta{padding:7px;}
+}
+@media(prefers-reduced-motion:reduce){.site-header .header-nav .header-resume-cta{transition:none;}}
