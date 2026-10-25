@@ -1,4 +1,4 @@
-import { CertificationCarousel } from '@/components/certification-carousel';
+import { CertificationCarousel } from './certification-carousel';
 
 export function Certifications() {
   return (
