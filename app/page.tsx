@@ -14,8 +14,8 @@ export default function Home() {
       <div className="hero-copy">
         <p className="eyebrow hero-disciplines"><span>Systems &amp; Infrastructure</span><span>Software Engineering</span><span>Cloud &amp; Platform Engineering</span></p>
         <span className="tiny-line" />
-        <h1>Somewhere<br />between <span>the wire</span><br />and <span>the software.</span></h1>
-        <p className="hero-lead">I like finding out how things work, what connects them, and what I can build along the way.</p>
+        <h1>I’m Myles Hobdy.<br />I manage <span className="hero-accent-red">systems</span><br />and build <span className="hero-accent-blue">software.</span></h1>
+        <p className="hero-lead">I’m a systems administrator working with identity, enterprise applications, and IT operations. Outside of that work, I build web apps and explore cloud infrastructure.</p>
         <div className="hero-actions">
           <Link className="button button-light" href="/work">Explore my work <ArrowRight size={20} /></Link>
           <Link className="button button-outline" href="/about">About me</Link>
