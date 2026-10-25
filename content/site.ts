@@ -2,9 +2,8 @@ export const site = {
   name: 'Myles',
   title: 'Myles Hobdy | Portfolio',
   description: 'A personal engineering portfolio exploring the space between systems, software, and infrastructure.',
-  // Replace these values when your public profile URLs and contact address are ready.
-  github: 'https://github.com/',
-  linkedin: 'https://www.linkedin.com/',
+  github: 'https://github.com/casual-loops',
+  linkedin: 'https://www.linkedin.com/in/myleshobdy/',
   email: 'myles@pyxishl.net',
 };
 export type Project = {
