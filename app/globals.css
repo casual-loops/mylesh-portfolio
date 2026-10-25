@@ -217,3 +217,11 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
     will-change:auto;
   }
 }
+
+/* Motion owns scroll reveal; do not replay the former mount-time card sequence. */
+.project-grid .project-card{animation:none;}
+@media(prefers-reduced-motion:reduce){
+ .project-grid .project-card{animation:none!important;}
+}
+/* Retain the lone dashed orbital path behind the planetary disk. */
+.hero-orbit .orbit-motion-secondary{animation-duration:145s;}
