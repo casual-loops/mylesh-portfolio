@@ -24,7 +24,7 @@ export function ProjectVisual({ slug }: { slug: string }) {
         <g fill="none" strokeWidth="1.2">
           <path className="diagram-flow-path" d="M116 118H194 M258 118H335" stroke="#91A9B9" strokeOpacity=".58"/>
           <path d="M190 114L196 118L190 122 M331 114L337 118L331 122" stroke="#91A9B9" strokeOpacity=".58"/>
-          <path d="M226 144V174H298" stroke="#D56668" strokeOpacity=".40" strokeDasharray="3 5"/>
+          
         </g>
         <rect x="35" y="86" width="82" height="64" rx="3" fill="#171A1F" stroke="#657888"/>
         <rect className="diagram-review" x="194" y="80" width="64" height="76" rx="3" fill="#192127" stroke="#76A9C6"/>
@@ -42,8 +42,8 @@ export function ProjectVisual({ slug }: { slug: string }) {
     'infrastructure-lab': (
       <svg viewBox="0 0 460 240" className="project-diagram diagram-infra" aria-hidden="true">
         <g fill="none" stroke="#8C9DAA" strokeOpacity=".49" strokeWidth="1.2">
-          <path className="diagram-network-lines" d="M230 104V78H130V93 M230 78H335V93 M130 137V163H230V177 M335 137V163H230" />
-          <path d="M230 78V104 M230 163V177" strokeDasharray="3 5"/>
+          <path className="diagram-network-lines" d="M230 101V78H130V93 M230 78H335V93" />
+          <path d="M230 168V172" stroke="#8C9DAA" strokeOpacity=".65" strokeLinecap="round" />
         </g>
         <rect className="diagram-server" x="191" y="101" width="78" height="62" rx="3" fill="#181E24" stroke="#76A9C6" strokeWidth="1.4"/>
         <rect x="90" y="93" width="79" height="44" rx="3" fill="#14191F" stroke="#788E9D"/>
