@@ -706,37 +706,3 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
  .about-inline-link,.about-final-links a{transition:none!important;}
  .about-inline-link:hover,.about-final-links a:hover{gap:12px;}
 }
-
-/* Cartoon illustrations add personality to secondary routes, never the home hero. */
-.avatar-header{position:relative;isolation:isolate;overflow:hidden;}
-.page-avatar{position:absolute;object-fit:contain;object-position:bottom center;pointer-events:none;user-select:none;z-index:0;filter:drop-shadow(0 10px 28px rgba(0,0,0,.3));}
-.work-intro{min-height:clamp(300px,26vw,410px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding-right:clamp(220px,28vw,440px);}
-.work-intro>*:not(.page-avatar){position:relative;z-index:1;}
-.page-avatar-work{height:clamp(255px,27vw,395px);width:auto;right:clamp(0px,5vw,110px);bottom:0;}
-.about-intro{padding-right:clamp(180px,24vw,340px);min-height:420px;}
-.about-intro-grid{position:relative;z-index:1;}
-.about-intro-grid{grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr);}
-.page-avatar-about{height:clamp(310px,31vw,450px);width:auto;right:0;bottom:0;}
-.experience-intro{min-height:clamp(340px,30vw,470px);padding-top:clamp(45px,6vw,90px);padding-bottom:clamp(60px,7vw,110px);display:flex;align-items:center;}
-.experience-intro-copy{position:relative;z-index:1;max-width:850px;padding-right:250px;}
-.experience-intro h1{font-family:var(--font-display);font-size:clamp(48px,5.3vw,88px);font-weight:300;letter-spacing:-.055em;line-height:1.1;margin:22px 0;}
-.experience-intro h1 span{color:#9FB8CB;}
-.experience-intro-copy>p:last-child{max-width:650px;font-size:clamp(17px,1.2vw,20px);line-height:1.7;color:var(--muted);}
-.page-avatar-experience{height:clamp(300px,28vw,430px);width:auto;right:clamp(18px,9vw,165px);bottom:0;}
-.cv-avatar-wrap{display:flex;justify-content:center;align-items:flex-end;max-height:160px;overflow:hidden;border-bottom:1px solid var(--line);margin-bottom:25px;background:radial-gradient(ellipse at 50% 95%,rgba(118,169,198,.08),transparent 70%);}
-.cv-avatar{height:210px;width:auto;object-fit:contain;object-position:bottom;}
-@media(max-width:1050px){
-  .about-intro{padding-right:210px;}
-  .about-intro-grid{grid-template-columns:1fr;}
-  .about-intro-aside{max-width:550px;}
-  .page-avatar-about{height:320px;opacity:.86;}
-}
-@media(max-width:740px){
-  .work-intro{padding-right:0;padding-bottom:230px;min-height:0;}
-  .page-avatar-work{height:220px;right:2%;opacity:.95;}
-  .about-intro{padding-right:0;padding-bottom:250px;min-height:0;}
-  .page-avatar-about{height:260px;right:3%;}
-  .experience-intro{padding-bottom:250px;min-height:0;}
-  .experience-intro-copy{padding-right:0;}
-  .page-avatar-experience{height:250px;right:8%;}
-}
