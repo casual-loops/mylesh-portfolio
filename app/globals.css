@@ -875,3 +875,25 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
  .experience-independent-grid{grid-template-columns:1fr;}
  .experience-independent-item{min-height:0;}
 }
+
+/* Experience skills: categorized technical inventory, not a proficiency ranking. */
+.experience-skills{margin-top:clamp(58px,7vw,112px);}
+.experience-skills-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(25px,5vw,90px);padding:clamp(28px,3vw,46px) 0;}
+.experience-skills-intro h3{font-family:var(--font-display);font-size:clamp(28px,2.6vw,45px);line-height:1.18;letter-spacing:-.045em;font-weight:300;margin:0;}
+.experience-skills-intro p{font-size:clamp(16px,1.1vw,19px);color:#B3BEC9;line-height:1.7;margin:0;}
+.experience-skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line);}
+.experience-skill-group{padding:clamp(20px,2.25vw,36px);border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0;}
+.experience-skill-heading{display:flex;align-items:baseline;gap:15px;margin-bottom:23px;}
+.experience-skill-heading>span{font:11px monospace;white-space:nowrap;color:var(--skill-accent);}
+.experience-skill-heading h4{font-family:var(--font-display);font-size:clamp(19px,1.45vw,26px);font-weight:400;letter-spacing:-.02em;margin:0;}
+.skill-accent-blue{--skill-accent:#76A9C6;}
+.skill-accent-red{--skill-accent:#D56668;}
+.skill-accent-ochre{--skill-accent:#D6A34F;}
+.experience-skill-tools{display:flex;flex-wrap:wrap;gap:9px;}
+.experience-skill-tools span{display:inline-flex;align-items:center;min-height:32px;padding:7px 12px;border:1px solid rgba(171,180,194,.22);border-radius:3px;background:#111316;color:#CBD4DD;font-size:13px;line-height:1.25;transition:border-color .2s,background .2s,transform .2s;}
+.experience-skill-tools span:hover{border-color:var(--skill-accent);background:rgba(118,169,198,.055);transform:translateY(-2px);}
+@media(max-width:700px){
+ .experience-skills-intro{grid-template-columns:1fr;gap:16px;}
+ .experience-skills-grid{grid-template-columns:1fr;}
+}
+@media(prefers-reduced-motion:reduce){.experience-skill-tools span{transition:none!important;}.experience-skill-tools span:hover{transform:none;}}
