@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { HeroOrbit } from '@/components/hero-orbit';
+import { HeroScene } from '@/components/hero-scene';
 import { projects } from '@/content/site';
 import { ProjectCard } from '@/components/project-card';
 import { SectionTitle } from '@/components/site-shell';
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
     <section className="hero shell">
-      <div className="hero-art"><HeroOrbit /></div>
+      <HeroScene />
       <div className="hero-copy">
         <p className="eyebrow">MYLES <span className="eyebrow-divider">/</span> MULTIDISCIPLINARY ENGINEER</p>
         <span className="tiny-line" />
