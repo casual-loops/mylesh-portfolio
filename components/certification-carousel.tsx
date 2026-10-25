@@ -1,15 +1,16 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Award } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const credentials = [
-  { title: 'Microsoft Certified: Azure Fundamentals', short: 'AZ-900', issuer: 'Microsoft', color: 'blue' },
-  { title: 'Google Workspace Administrator Associate', short: 'Workspace', issuer: 'Google', color: 'red' },
-  { title: 'ITIL 4 Foundation', short: 'ITIL 4', issuer: 'PeopleCert', color: 'ochre' },
-  { title: 'Certified Knowledge Manager', short: 'CKM', issuer: 'Knowledge management', color: 'blue' },
-  { title: 'Certified Scrum Master', short: 'CSM', issuer: 'Scrum', color: 'red' },
-  { title: 'Six Sigma Green Belt', short: 'SSGB', issuer: 'Process improvement', color: 'ochre' },
+  { title: 'Microsoft Certified: Azure Fundamentals', short: 'AZ-900', issuer: 'Microsoft', color: 'blue', badge: '/images/azure-fundamentals.png' },
+  { title: 'Google Workspace Administrator Associate', short: 'Workspace', issuer: 'Google', color: 'red', badge: '/images/google-workspace.png' },
+  { title: 'ITIL 4 Foundation', short: 'ITIL 4', issuer: 'PeopleCert', color: 'ochre', badge: '/images/itil.png' },
+  { title: 'Certified Knowledge Manager', short: 'CKM', issuer: 'KM Institute', color: 'blue', badge: '/images/ckm.png' },
+  { title: 'Certified Scrum Master', short: 'CSM', issuer: 'Scrum Alliance', color: 'red', badge: '/images/sa-csm-600.png' },
+  { title: 'Six Sigma Green Belt', short: 'SSGB', issuer: 'Process improvement', color: 'ochre', badge: '/images/SSO-Green-Belt-Badge.webp' },
 ];
 
 export function CertificationCarousel() {
@@ -44,9 +45,9 @@ export function CertificationCarousel() {
       <div className="credential-track" ref={trackRef} onScroll={updatePosition} tabIndex={0} role="region" aria-label="Certifications, scroll horizontally to browse">
         {credentials.map((credential, index) => (
           <article key={credential.short} className={`credential-card credential-${credential.color}`}>
-            <div className="credential-card-top"><span>{String(index + 1).padStart(2, '0')} //</span><Award size={23} strokeWidth={1.4} aria-hidden="true" /></div>
+            <div className="credential-card-top"><span>{String(index + 1).padStart(2, '0')} //</span><span className="credential-code">{credential.short}</span></div>
             <div className="credential-card-body">
-              <span className="credential-code">{credential.short}</span>
+              <div className="credential-badge-wrap"><Image src={credential.badge} alt={`${credential.title} certification badge`} width={128} height={128} className="credential-badge" /></div>
               <h3>{credential.title}</h3>
             </div>
             <div className="credential-issuer">{credential.issuer}</div>
