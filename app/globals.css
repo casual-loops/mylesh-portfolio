@@ -33,21 +33,21 @@ body{font-family:var(--font-body);font-weight:400;letter-spacing:0;}
   --text:#e9e5dd;
   --muted:#aaa7a3;
   --line:rgba(210,202,190,.19);
-  --blue:#c17b67;
-  --accent-terra:#c17b67;
-  --accent-ochre:#c5a36b;
-  --accent-sage:#91a59b;
+  --blue:#D77D61;
+  --accent-terra:#D77D61;
+  --accent-ochre:#D6A34F;
+  --accent-sage:#83B49D;
 }
 body{background:#050506;color:var(--text);}
 body:before{background-image:radial-gradient(#cfc8bc .55px,transparent .8px);opacity:.10;}
 .site-header,.site-footer,.hero-figure,.section-title{border-color:var(--line);}
 .site-header nav a{color:#c3beb6;}
 .site-header nav a:hover,.footer-links a:hover{color:#f1e8dc;}
-.orbit-mark,.orbit-mark:before{border-color:#c5a36b;}
-.orbit-mark:before{background:#c5a36b;}
+.orbit-mark,.orbit-mark:before{border-color:#D6A34F;}
+.orbit-mark:before{background:#D6A34F;}
 .orbit-mark i{background:#e9e5dd;}
-.orbit-mark b{background:#c17b67;}
-.orbit-mark em{background:#91a59b;}
+.orbit-mark b{background:#D77D61;}
+.orbit-mark em{background:#83B49D;}
 .eyebrow,.hero-figure,.hero-figure span{color:#bcb6ac;}
 .eyebrow-divider{color:var(--accent-ochre);}
 .hero h1 span{color:#d1b49b;}
