@@ -37,7 +37,7 @@ function TechnologyLogo({ name }: { name: string }) {
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
-    <Link className="project-card" href={`/work/${project.slug}`}>
+    <Link className={`project-card project-card-${project.slug}`} href={`/work/${project.slug}`}>
       <div className={`project-art art-${project.slug}`}>
         <span className="project-number">0{index + 1}</span>
         <ProjectVisual slug={project.slug} />
