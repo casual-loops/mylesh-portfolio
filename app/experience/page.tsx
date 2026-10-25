@@ -69,8 +69,8 @@ const roles = [
 const skillGroups = [
   { id: '01', name: 'Systems & infrastructure', accent: 'blue', tools: ['Linux', 'Windows', 'macOS', 'Proxmox VE', 'Docker', 'Docker Compose', 'Caddy', 'Postfix', 'Home Assistant', 'FileWave', 'Checkmk'] },
   { id: '02', name: 'Identity & enterprise platforms', accent: 'ochre', tools: ['RapidIdentity', 'Google Workspace', 'Google Cloud', 'Skyward', 'Frontline', 'Clever', 'Incident IQ', 'ServiceNow', 'Atlassian', 'Salesforce', 'SharePoint', 'Notion', 'Supabase'] },
-  { id: '03', name: 'Software & development', accent: 'red', tools: ['Python', 'TypeScript', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'Node.js', 'REST APIs', 'Git', 'GitHub', 'GitHub Actions', 'Playwright'] },
-  { id: '04', name: 'Data & observability', accent: 'blue', tools: ['PostgreSQL', 'SQL', 'Tableau', 'Checkmk', 'Umami', 'Log Analytics', 'Azure Monitor'] },
+  { id: '03', name: 'Software & development', accent: 'red', tools: ['Python', 'TypeScript', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'Node.js', 'REST APIs', 'Git', 'GitHub', 'GitHub Actions', 'Playwright', 'Perforce', 'Unreal Engine'] },
+  { id: '04', name: 'Data & observability', accent: 'blue', tools: ['PostgreSQL', 'SQL', 'Tableau', 'Checkmk', 'Umami', 'Log Analytics', 'Azure Monitor', 'Grafana', 'Prometheus'] },
   { id: '05', name: 'Cloud & deployment', accent: 'ochre', tools: ['Microsoft Azure', 'Azure Container Apps', 'Azure Container Registry', 'Azure Key Vault', 'Supabase', 'Docker', 'GitHub Actions'] },
   { id: '06', name: 'Operations & automation', accent: 'red', tools: ['PowerShell', 'ITIL', 'Change management', 'Incident & problem management', 'Knowledge management', 'API integrations', 'Technical documentation', 'Microsoft Visio', 'draw.io', 'Mermaid'] },
 ];
