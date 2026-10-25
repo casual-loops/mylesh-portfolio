@@ -23,3 +23,57 @@ body{font-family:var(--font-body);font-weight:400;letter-spacing:0;}
 .tech-logo-image[src*="/caddy.svg"]{filter:invert(1)}
 .project-card:hover .tech-logo{transform:translateY(-1px)}
 @media(prefers-reduced-motion:reduce){.tech-logo{transition:none}}
+
+/* Observatory palette v2: black canvas with restrained exploration accents. */
+:root{
+  color-scheme:dark;
+  --bg:#050506;
+  --panel:#111113;
+  --surface-raised:#1a1a1d;
+  --text:#e9e5dd;
+  --muted:#aaa7a3;
+  --line:rgba(210,202,190,.19);
+  --blue:#c17b67;
+  --accent-terra:#c17b67;
+  --accent-ochre:#c5a36b;
+  --accent-sage:#91a59b;
+}
+body{background:#050506;color:var(--text);}
+body:before{background-image:radial-gradient(#cfc8bc .55px,transparent .8px);opacity:.10;}
+.site-header,.site-footer,.hero-figure,.section-title{border-color:var(--line);}
+.site-header nav a{color:#c3beb6;}
+.site-header nav a:hover,.footer-links a:hover{color:#f1e8dc;}
+.orbit-mark,.orbit-mark:before{border-color:#c5a36b;}
+.orbit-mark:before{background:#c5a36b;}
+.orbit-mark i{background:#e9e5dd;}
+.orbit-mark b{background:#c17b67;}
+.orbit-mark em{background:#91a59b;}
+.eyebrow,.hero-figure,.hero-figure span{color:#bcb6ac;}
+.eyebrow-divider{color:var(--accent-ochre);}
+.hero h1 span{color:#d1b49b;}
+.hero-lead,.page-lead{color:#bfb9af;}
+.hero-orbit{filter:drop-shadow(0 0 38px rgba(193,123,103,.10));}
+.button-light{background:#e9e5dd;color:#171616;}
+.button-light:hover{background:#fff7ed;color:#171616;}
+.button-outline{border-color:rgba(197,163,107,.52);color:#e9e5dd;}
+.button-outline:hover{border-color:var(--accent-ochre);}
+.section-title>div>span:first-child,.section-title a,.text-link,.home-close>a{color:var(--accent-ochre);}
+.project-card{background:#0d0d0f;border-color:var(--line);}
+.project-card:hover{border-color:var(--accent-terra);}
+.project-art{color:#d6c7b4;background:radial-gradient(circle at 50% 80%,rgba(197,163,107,.13),transparent 48%),linear-gradient(135deg,#1a1a1d,#080809);}
+.art-tapestree{background:radial-gradient(circle at 60% 30%,rgba(145,165,155,.13),transparent 56%),#101012;}
+.art-infrastructure-lab{background:repeating-linear-gradient(0deg,transparent 0 22px,rgba(197,163,107,.04) 23px 24px),linear-gradient(135deg,#171719,#080809);}
+.project-art:before,.case-visual:before{border-color:rgba(197,163,107,.25);}
+.project-status{background:rgba(10,10,11,.89);border-color:var(--line);color:#c9c0b2;}
+.project-card p,.prose-columns p,.about-feature p,.cv-layout p,.timeline p,.case-text p,.case-text li{color:var(--muted);}
+.project-name-row h3{color:var(--text);}
+.tech-logo{color:#c9beb0;}
+.heading-orbit{border-color:rgba(197,163,107,.18);box-shadow:0 0 80px rgba(197,163,107,.035),inset 0 0 90px rgba(197,163,107,.03);}
+.heading-orbit:after{border-color:rgba(145,165,155,.24);}
+.timeline-row:before{background:var(--bg);border-color:var(--accent-ochre);}
+.timeline-date,.timeline-org,.case-tagline,.case-meta,.case-links a{color:var(--accent-ochre)!important;}
+.cv-sidebar{background:#111113;border-color:var(--line);}
+.about-planet{background:radial-gradient(circle at center,transparent 24%,#050506aa 69%),url('/images/observatory-planet.webp') center/contain no-repeat;filter:grayscale(.7) sepia(.16);}
+.large-quote{color:#ded6cc;}
+.footer-intro p,.footer-bottom,.footer-note{color:var(--muted);}
+a:focus-visible{outline-color:var(--accent-ochre);}
