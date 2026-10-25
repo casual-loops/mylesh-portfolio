@@ -1169,3 +1169,20 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
  .dd-progress-row p{font-size:11px;}
 }
 @media(prefers-reduced-motion:reduce){.dd-section-nav a{transition:none;}}
+
+/* Domain Doctor: real application captures, presented as evidence instead of concept art. */
+.dd-product-shot{min-width:0;margin:0;border:1px solid rgba(118,169,198,.32);background:#101419;overflow:hidden;}
+.dd-shot-top{display:flex;justify-content:space-between;gap:12px;padding:13px 17px;border-bottom:1px solid var(--line);font:10px monospace;letter-spacing:.11em;color:#9BB2C1;}
+.dd-shot-top span:last-child{color:#D6A34F;}
+.dd-product-shot img{display:block;width:100%;height:auto;object-fit:contain;background:#0D1115;}
+.dd-product-shot-hero>a{display:block;}
+.dd-product-shot-hero img{max-height:510px;object-fit:contain;}
+.dd-product-shot figcaption{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:13px 17px;border-top:1px solid var(--line);font:10px monospace;letter-spacing:.075em;color:#A4B4C0;}
+.dd-product-shot figcaption span{color:#7F9BAE;}
+.dd-result-showcase{margin-top:clamp(32px,4vw,68px);}
+.dd-result-copy{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:clamp(22px,5vw,90px);align-items:end;margin-bottom:25px;}
+.dd-result-copy>span{grid-column:1/-1;color:#D6A34F;font:11px monospace;letter-spacing:.12em;}
+.dd-result-copy h3{font-family:var(--font-display);font-size:clamp(26px,3vw,48px);font-weight:300;letter-spacing:-.04em;line-height:1.18;margin:0;}
+.dd-result-copy p{font-size:clamp(15px,1.1vw,18px);line-height:1.75;color:#B2BFCB;margin:0;}
+.dd-product-shot-result img{width:100%;height:auto;max-height:760px;object-fit:contain;}
+@media(max-width:700px){.dd-result-copy{grid-template-columns:1fr;gap:14px;}.dd-result-copy>span{grid-column:auto;}}
