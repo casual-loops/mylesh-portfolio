@@ -1,5 +1,6 @@
 export const site = {
   name: 'Myles',
+  url: 'https://mylesh.dev',
   title: 'Myles Hobdy | Portfolio',
   description: 'A personal engineering portfolio exploring the space between systems, software, and infrastructure.',
   github: 'https://github.com/casual-loops',
