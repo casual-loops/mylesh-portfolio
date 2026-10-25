@@ -77,3 +77,40 @@ body:before{background-image:radial-gradient(#cfc8bc .55px,transparent .8px);opa
 .large-quote{color:#ded6cc;}
 .footer-intro p,.footer-bottom,.footer-note{color:var(--muted);}
 a:focus-visible{outline-color:var(--accent-ochre);}
+
+/* Observatory palette v3: near-black with cool neutrals; gold used sparingly. */
+:root{
+ --bg:#050506;--panel:#111113;--surface-raised:#19191c;
+ --text:#E7E9EC;--muted:#A6ADB6;--line:rgba(171,180,194,.19);
+ --blue:#76A9C6;--accent-terra:#D56668;--accent-ochre:#D6A34F;--accent-sage:#76A9C6;
+}
+body{background:var(--bg);color:var(--text);}
+body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opacity:.09;}
+.site-header nav a{color:#BFC5CE;}
+.site-header nav a:hover,.footer-links a:hover{color:#F0F2F5;}
+.orbit-mark,.orbit-mark:before{border-color:#8499AB;}
+.orbit-mark:before{background:#8499AB;}
+.orbit-mark i{background:#EDF0F4;}
+.eyebrow,.hero-figure,.hero-figure span{color:#AAB4BF;}
+.eyebrow-divider{color:#768898;}
+.hero h1 span{color:#BDC9D5;}
+.hero-lead,.page-lead{color:#AEB8C3;}
+.hero-orbit{filter:drop-shadow(0 0 24px rgba(118,169,198,.075));}
+.button-light{background:#E7E9EC;color:#17191C;}
+.button-light:hover{background:#FFFFFF;color:#17191C;}
+.button-outline{border-color:rgba(153,166,182,.47);color:#E7E9EC;}
+.button-outline:hover{border-color:var(--accent-sage);}
+.section-title>div>span:first-child,.section-title a,.text-link,.home-close>a{color:var(--accent-sage);}
+.project-art{color:#B9C7D3;background:radial-gradient(circle at 50% 80%,rgba(118,169,198,.10),transparent 48%),linear-gradient(135deg,#17191D,#080809);}
+.art-tapestree{background:radial-gradient(circle at 60% 30%,rgba(118,169,198,.10),transparent 56%),#101012;}
+.art-infrastructure-lab{background:repeating-linear-gradient(0deg,transparent 0 22px,rgba(171,183,194,.035) 23px 24px),linear-gradient(135deg,#171719,#080809);}
+.project-art:before,.case-visual:before{border-color:rgba(145,160,177,.22);}
+.project-status{color:#BBC5CF;}
+.tech-logo{color:#AFC0CF;}
+.heading-orbit{border-color:rgba(118,169,198,.14);box-shadow:0 0 75px rgba(118,169,198,.025),inset 0 0 80px rgba(118,169,198,.025);}
+.heading-orbit:after{border-color:rgba(118,169,198,.19);}
+.timeline-row:before{border-color:var(--accent-sage);}
+.timeline-date,.timeline-org,.case-tagline,.case-meta,.case-links a{color:var(--accent-sage)!important;}
+.large-quote{color:#DCE2E9;}
+.about-planet{filter:grayscale(.75) sepia(0);}
+/* Accent hierarchy: red marks, blue links, gold only in occasional orbital detail. */
