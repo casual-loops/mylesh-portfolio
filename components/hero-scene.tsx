@@ -6,8 +6,8 @@ import { motion, useMotionValue, useReducedMotion, useSpring } from 'motion/reac
 import { HeroOrbit } from '@/components/hero-orbit';
 
 /**
- * Keep the planet still. Only instrumentation and light respond gently to pointer input.
- * The SVG's own orbital animation remains CSS-driven.
+ * A small spring-driven parallax adds depth to the SVG illustration.
+ * Its background orbital movement remains CSS-driven.
  */
 export function HeroScene() {
   const ref = useRef<HTMLDivElement>(null);
