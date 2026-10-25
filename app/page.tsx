@@ -7,6 +7,7 @@ import { SectionTitle } from '@/components/site-shell';
 
 export default function Home() {
   return (
+    <>
     <section className="hero shell">
       <div className="hero-art"><HeroOrbit /></div>
       <div className="hero-copy">
@@ -31,5 +32,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 }
