@@ -733,3 +733,10 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
   .diagram-scan-pulse,.diagram-readout,.diagram-review,.diagram-evidence,
   .diagram-server-light {animation:none!important}
 }
+
+/* Selected Work: accent the navigation affordance and archive indices. */
+.project-number{color:var(--accent-ochre);}
+.project-open{color:var(--accent-terra);}
+.project-card .project-name-row .project-open svg{color:var(--accent-terra);}
+.project-card:hover .project-name-row .project-open svg,
+.project-card:focus-visible .project-name-row .project-open svg{color:var(--accent-terra);}
