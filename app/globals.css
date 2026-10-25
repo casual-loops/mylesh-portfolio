@@ -921,3 +921,15 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
 .credential-progress span{display:block;position:absolute;left:0;top:0;width:50%;height:100%;background:#76A9C6;transition:transform .15s linear;}
 @media(max-width:700px){.credential-card{flex-basis:min(83vw,340px);min-height:238px;}}
 @media(prefers-reduced-motion:reduce){.credential-track{scroll-behavior:auto;}.credential-arrows button,.credential-progress span{transition:none;}}
+
+/* Certification artwork: preserve badge proportions and visual breathing room. */
+.credential-card{min-height:355px;}
+.credential-card-body{display:flex;flex-direction:column;align-items:flex-start;gap:15px;}
+.credential-card-body h3{margin:0;}
+.credential-badge-wrap{display:flex;align-items:center;justify-content:center;width:100%;height:138px;}
+.credential-badge{display:block;width:auto;height:auto;max-width:128px;max-height:128px;object-fit:contain;}
+@media(max-width:700px){
+ .credential-card{min-height:325px;}
+ .credential-badge-wrap{height:110px;}
+ .credential-badge{max-width:105px;max-height:105px;}
+}
