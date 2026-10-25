@@ -1,6 +1,6 @@
 export const site = {
   name: 'Myles',
-  title: 'Myles | The Observatory',
+  title: 'Myles Hobdy | Portfolio',
   description: 'A personal engineering portfolio exploring the space between systems, software, and infrastructure.',
   // Replace these values when your public profile URLs and contact address are ready.
   github: 'https://github.com/',
