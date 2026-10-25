@@ -29,6 +29,8 @@ export default function DomainDoctorCaseStudy() {
             <p className="dd-hero-subtitle">A clearer look at what happens when you visit a domain.</p>
             <p className="dd-hero-description">A web-based diagnostic tool that brings DNS, TLS, HTTP behavior, and security headers together in one report. Built to make the invisible layers of the web easier to examine and understand.</p>
             <div className="dd-hero-links">
+              <a href="https://domaindoctor.fyi/" target="_blank" rel="noopener noreferrer">Live application <ArrowUpRight size={16} aria-hidden="true" /></a>
+              <a href="https://github.com/casual-loops/domain-doctor" target="_blank" rel="noopener noreferrer">Source on GitHub <ArrowUpRight size={16} aria-hidden="true" /></a>
               <a href="#dd-system">Explore the architecture <ArrowUpRight size={16} aria-hidden="true" /></a>
             </div>
           </div>
