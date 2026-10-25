@@ -707,29 +707,29 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
  .about-inline-link:hover,.about-final-links a:hover{gap:12px;}
 }
 
-/* Animated technical previews: activate on hover or keyboard focus, with quiet ambient motion. */
-@keyframes dd-orbit{to{transform:rotate(360deg)}}
-@keyframes dd-pulse{0%,100%{stroke-opacity:.45}50%{stroke-opacity:1}}
-@keyframes dd-readout{0%,100%{opacity:.25}50%{opacity:1}}
-@keyframes tap-flow{to{stroke-dashoffset:-48}}
-@keyframes tap-review{0%,100%{stroke:#76A9C6}50%{stroke:#D6A34F}}
-@keyframes tap-evidence{0%,40%,100%{stroke-opacity:.48}70%{stroke-opacity:1}}
-@keyframes lab-traffic{to{stroke-dashoffset:-36}}
-@keyframes lab-activity{0%,100%{opacity:.35}50%{opacity:1}}
-.diagram-scan-orbit{transform-box:fill-box;transform-origin:center;animation:dd-orbit 28s linear infinite;}
-.diagram-scan-pulse{animation:dd-pulse 4s ease-in-out infinite;}
-.diagram-readout{animation:dd-readout 5s ease-in-out infinite;}
-.diagram-flow-path{stroke-dasharray:7 5;animation:tap-flow 4s linear infinite;}
-.diagram-review{animation:tap-review 6s ease-in-out infinite;}
-.diagram-evidence{animation:tap-evidence 6s ease-in-out infinite;}
-.diagram-network-lines{stroke-dasharray:7 5;animation:lab-traffic 7s linear infinite;}
-.diagram-server-light{animation:lab-activity 2.5s ease-in-out infinite;}
-.diagram-server-light.b{animation-delay:.8s;}
-.diagram-server-light.c{animation-delay:1.6s;}
-.project-card:hover .diagram-scan-orbit,.project-card:focus-visible .diagram-scan-orbit{animation-duration:9s;}
-.project-card:hover .diagram-flow-path,.project-card:focus-visible .diagram-flow-path{animation-duration:1.5s;}
-.project-card:hover .diagram-network-lines,.project-card:focus-visible .diagram-network-lines{animation-duration:2s;}
-@media(prefers-reduced-motion:reduce){
- .diagram-scan-orbit,.diagram-scan-pulse,.diagram-readout,.diagram-flow-path,
- .diagram-review,.diagram-evidence,.diagram-network-lines,.diagram-server-light{animation:none!important;}
+/* Technical diagrams remain geometrically stable. Motion is reserved for small indicators. */
+@keyframes observatory-signal {
+  0%,100% { opacity:.48; }
+  50% { opacity:1; }
+}
+.diagram-scan-orbit { transform:none; }
+.diagram-flow-path,.diagram-network-lines { stroke-dasharray:none;stroke-dashoffset:0; }
+.diagram-scan-pulse,.diagram-readout,.diagram-review,.diagram-evidence,
+.diagram-server-light { animation:none; }
+.project-card:is(:hover,:focus-visible) .diagram-scan-pulse,
+.project-card:is(:hover,:focus-visible) .diagram-readout {
+  animation:observatory-signal 2.4s ease-in-out infinite;
+}
+.project-card:is(:hover,:focus-visible) .diagram-review,
+.project-card:is(:hover,:focus-visible) .diagram-evidence {
+  animation:observatory-signal 3s ease-in-out infinite;
+}
+.project-card:is(:hover,:focus-visible) .diagram-server-light {
+  animation:observatory-signal 1.8s ease-in-out infinite;
+}
+.project-card:is(:hover,:focus-visible) .diagram-server-light.b {animation-delay:.4s}
+.project-card:is(:hover,:focus-visible) .diagram-server-light.c {animation-delay:.8s}
+@media(prefers-reduced-motion:reduce) {
+  .diagram-scan-pulse,.diagram-readout,.diagram-review,.diagram-evidence,
+  .diagram-server-light {animation:none!important}
 }
