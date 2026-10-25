@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Reveal } from '@/components/reveal';
+import { CertificationCarousel } from '@/components/certification-carousel';
 
 export const metadata = { title: 'Experience' };
 
@@ -159,6 +160,13 @@ export default function Experience() {
             </Reveal>
           ))}
         </div>
+      </section>
+      <section className="experience-certifications" aria-labelledby="experience-certifications-heading">
+        <div className="experience-history-heading">
+          <h2 id="experience-certifications-heading"><span>04 <b>//</b></span> CERTIFICATIONS</h2>
+          <span>PROFESSIONAL CREDENTIALS</span>
+        </div>
+        <CertificationCarousel />
       </section>
       <div className="experience-next">
         <p>Want the technical overview?</p>
