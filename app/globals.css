@@ -525,3 +525,44 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
 .project-card::after{
   display:none;
 }
+
+/* Status pills: color communicates lifecycle, independently of card artwork. */
+.project-status{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:7px 12px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.025em;
+  line-height:1;
+  color:var(--status-color);
+  background:var(--status-bg);
+  border:1px solid var(--status-border);
+  backdrop-filter:blur(8px);
+}
+.project-status::before{
+  content:"";
+  display:block;
+  flex:0 0 6px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:currentColor;
+}
+.project-card-domain-doctor{
+  --status-color:#83E4AD;
+  --status-bg:rgba(20,75,47,.77);
+  --status-border:rgba(131,228,173,.45);
+}
+.project-card-tapestree{
+  --status-color:#C3A6FF;
+  --status-bg:rgba(64,39,100,.8);
+  --status-border:rgba(195,166,255,.45);
+}
+.project-card-infrastructure-lab{
+  --status-color:#8CCBFA;
+  --status-bg:rgba(27,66,98,.8);
+  --status-border:rgba(140,203,250,.45);
+}
