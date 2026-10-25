@@ -1,6 +1,41 @@
 import Link from 'next/link';
-import {ArrowRight,ArrowUpRight,Boxes,Code2,Network} from 'lucide-react';
-import {projects} from '@/content/site';
-import {ProjectCard} from '@/components/project-card';
-import {SectionTitle} from '@/components/site-shell';
-export default function Home(){return <><section className="hero shell"><div className="hero-art" role="img" aria-label="A planet illuminated at its edge, surrounded by scientific orbital instrumentation"/><div className="hero-copy"><p className="eyebrow">MYLES <span className="eyebrow-divider">/</span> MULTIDISCIPLINARY ENGINEER</p><span className="tiny-line"/><h1>Somewhere<br/>between <span>the wire</span><br/>and <span>the software.</span></h1><p className="hero-lead">I like finding out how things work, what connects them, and what I can build along the way.</p><div className="hero-actions"><Link className="button button-light" href="/work">Explore my work <ArrowRight size={20}/></Link><Link className="button button-outline" href="/about">About me</Link></div></div><div className="hero-figure">⊕ <span>FIG. 01 / THE OBSERVATORY</span></div></section><div className="shell content-flow"><section><SectionTitle index="02" name="SELECTED WORK" href="/work" label="View all work"/><div className="project-grid">{projects.map((p,i)=><ProjectCard key={p.slug} project={p} index={i}/>)}</div></section><section><SectionTitle index="03" name="A LITTLE BIT OF EVERYTHING"/><p className="section-intro">Different layers of the same puzzle. I like working across the boundaries between them.</p><div className="discipline-grid"><div><Network/><h3>Systems & infrastructure</h3><p>Identity, virtualization, automation, and the services that keep things running.</p></div><div><Code2/><h3>Software engineering</h3><p>Applications, APIs, databases, and the decisions behind how software works.</p></div><div><Boxes/><h3>Cloud & platforms</h3><p>Containers, deployment, architecture, and the environments that bring it together.</p></div></div></section><section className="home-close"><p className="eyebrow">STILL EXPLORING</p><h2>There's always something else to figure out.</h2><Link href="/about">A little more about me <ArrowUpRight size={18}/></Link></section></div></>}
+import { ArrowRight } from 'lucide-react';
+import { HeroScene } from '@/components/hero-scene';
+import { projects } from '@/content/site';
+import { ProjectCard } from '@/components/project-card';
+import { SectionTitle } from '@/components/site-shell';
+import { Reveal } from '@/components/reveal';
+
+export default function Home() {
+  return (
+    <>
+    <section className="hero shell">
+      <HeroScene />
+      <div className="hero-copy">
+        <p className="eyebrow hero-disciplines"><span>Systems &amp; Infrastructure</span><span>Software Engineering</span><span>Cloud &amp; Platform Engineering</span></p>
+        <span className="tiny-line" />
+        <h1><span className="hero-headline-line">Curious about <em className="hero-accent-red">how it works.</em></span><span className="hero-headline-line">Driven to <em className="hero-accent-blue">build it better.</em></span></h1>
+        <p className="hero-lead">I put my energy into building and improving technology that helps people do more with less friction. More time to create, learn, and move forward. 🚀</p>
+        <div className="hero-actions">
+          <Link className="button button-light" href="/work">Explore my work <ArrowRight size={20} /></Link>
+          <Link className="button button-outline" href="/about">About me</Link>
+        </div>
+      </div>
+    </section>
+    <div className="shell content-flow">
+      <section>
+        <Reveal>
+        <SectionTitle index="02" name="SELECTED WORK" href="/work" label="View all work" />
+        </Reveal>
+        <div className="project-grid">
+          {projects.map((project, index) => (
+            <Reveal key={project.slug} delay={index * 0.09}>
+              <ProjectCard project={project} index={index} />
+            </Reveal>
+          ))}
+        </div>
+      </section>
+    </div>
+    </>
+  );
+}
