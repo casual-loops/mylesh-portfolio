@@ -41,18 +41,47 @@ export function ProjectVisual({ slug }: { slug: string }) {
     ),
     'infrastructure-lab': (
       <svg viewBox="0 0 460 240" className="project-diagram diagram-infra" aria-hidden="true">
-        <g fill="none" stroke="#8C9DAA" strokeOpacity=".49" strokeWidth="1.2">
-          <path className="diagram-network-lines" d="M230 101V78H130V93 M230 78H335V93" />
-          <path d="M230 168V172" stroke="#8C9DAA" strokeOpacity=".65" strokeLinecap="round" />
+        <defs>
+          <linearGradient id="lab-chassis" x1="0" y1="0" x2="1" y2="1">
+            <stop stopColor="#252D35"/><stop offset="1" stopColor="#11161B"/>
+          </linearGradient>
+        </defs>
+        <text x="54" y="45" fill="#A9B9C4" fontFamily="monospace" fontSize="9" letterSpacing="1.5">THE HOME LAB</text>
+        <path d="M54 55H118" stroke="#76A9C6" strokeOpacity=".45"/>
+        <g transform="translate(132 36)">
+          <path d="M14 8L170 8L185 21L185 180L170 192L14 192L0 180L0 21Z" fill="#0D1115" stroke="#617587" strokeWidth="1.2"/>
+          <path d="M14 8L170 8L185 21L15 21Z" fill="#26303A" opacity=".7"/>
+          <rect x="15" y="26" width="155" height="157" rx="3" fill="url(#lab-chassis)" stroke="#435462"/>
+          <g fill="#10161C" stroke="#647B8D" strokeOpacity=".75">
+            <rect x="24" y="36" width="137" height="30" rx="2"/>
+            <rect x="24" y="73" width="137" height="43" rx="2"/>
+            <rect x="24" y="123" width="137" height="23" rx="2"/>
+            <rect x="24" y="153" width="137" height="20" rx="2"/>
+          </g>
+          <g fill="none" stroke="#7D94A5" strokeOpacity=".4">
+            <path d="M36 45H79 M36 51H69 M36 57H75"/>
+            <path d="M37 84H87 M37 92H80 M37 100H69"/>
+            <path d="M36 134H105 M36 140H85"/>
+            <path d="M36 163H115"/>
+          </g>
+          <g fill="#76A9C6"><circle className="diagram-server-light a" cx="145" cy="46" r="2.5"/><circle className="diagram-server-light b" cx="135" cy="46" r="2.5"/></g>
+          <g fill="#D6A34F"><circle className="diagram-server-light c" cx="145" cy="87" r="2.5"/></g>
+          <g fill="#D56668"><circle cx="145" cy="134" r="2.5"/></g>
+          <g fill="none" stroke="#6D879A" strokeOpacity=".55">
+            <rect x="109" y="91" width="32" height="13" rx="2"/>
+            <path d="M113 95H137 M113 99H129"/>
+          </g>
         </g>
-        <rect className="diagram-server" x="191" y="101" width="78" height="62" rx="3" fill="#181E24" stroke="#76A9C6" strokeWidth="1.4"/>
-        <rect x="90" y="93" width="79" height="44" rx="3" fill="#14191F" stroke="#788E9D"/>
-        <rect x="296" y="93" width="79" height="44" rx="3" fill="#14191F" stroke="#788E9D"/>
-        <rect x="190" y="177" width="80" height="33" rx="3" fill="#161B20" stroke="#788E9D"/>
-        <g fill="#C3CED8" fontFamily="monospace" fontSize="9" letterSpacing=".5" textAnchor="middle"><text x="230" y="126">PROXMOX</text><text x="230" y="139">HOST</text><text x="129" y="119">VM / LXC</text><text x="336" y="119">NETWORK</text><text x="230" y="197">SERVICES</text></g>
-        <circle className="diagram-server-light a" cx="207" cy="152" r="2.5" fill="#D6A34F"/><circle className="diagram-server-light b" cx="217" cy="152" r="2.5" fill="#76A9C6"/><circle className="diagram-server-light c" cx="227" cy="152" r="2.5" fill="#D56668"/>
-        <path d="M58 59H95 M365 192H400" stroke="#A0B1BF" strokeOpacity=".32"/>
-        <text x="59" y="53" fill="#A9B9C4" fontFamily="monospace" fontSize="9" letterSpacing="1">LAB TOPOLOGY</text>
+        <g fill="none" stroke="#8096A7" strokeOpacity=".38">
+          <path d="M322 92H365L382 76H407"/>
+          <path d="M322 158H365L382 177H407"/>
+        </g>
+        <g fill="#B9C9D5" fontFamily="monospace" fontSize="9" letterSpacing=".8">
+          <text x="354" y="66">COMPUTE</text>
+          <text x="353" y="194">NETWORK</text>
+        </g>
+        <circle cx="407" cy="76" r="3" fill="#76A9C6"/>
+        <circle cx="407" cy="177" r="3" fill="#D6A34F"/>
       </svg>
     ),
   };
