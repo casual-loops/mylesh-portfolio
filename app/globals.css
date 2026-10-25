@@ -114,3 +114,76 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
 .large-quote{color:#DCE2E9;}
 .about-planet{filter:grayscale(.75) sepia(0);}
 /* Accent hierarchy: red marks, blue links, gold only in occasional orbital detail. */
+
+/* Observatory motion system: subtle, deliberate, and accessible. */
+@keyframes observatory-reveal{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes observatory-arrive{
+  from{opacity:0;transform:translate3d(18px,4px,0) scale(.985)}
+  to{opacity:1;transform:translate3d(0,0,0) scale(1)}
+}
+@keyframes observatory-orbit-drift{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(0,-7px,0)}
+}
+@keyframes observatory-orbit-counterdrift{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(5px,3px,0)}
+}
+@keyframes observatory-starlight{
+  0%,100%{opacity:.82}
+  50%{opacity:1}
+}
+.hero-copy .eyebrow,.hero-copy .tiny-line,.hero-copy h1,.hero-copy .hero-lead,.hero-copy .hero-actions{
+  animation:observatory-reveal .9s cubic-bezier(.2,.7,.2,1) both;
+}
+.hero-copy .tiny-line{animation-delay:.08s}
+.hero-copy h1{animation-delay:.16s}
+.hero-copy .hero-lead{animation-delay:.28s}
+.hero-copy .hero-actions{animation-delay:.40s}
+.hero-art{animation:observatory-arrive 1.45s cubic-bezier(.18,.7,.24,1) both;}
+.hero-orbit .orbit-motion-primary{
+  animation:observatory-orbit-drift 22s ease-in-out infinite;
+}
+.hero-orbit .orbit-motion-secondary{
+  animation:observatory-orbit-counterdrift 29s ease-in-out infinite;
+}
+.hero-orbit .orbit-motion-primary,.hero-orbit .orbit-motion-secondary{
+  transform-box:view-box;transform-origin:center;
+}
+.hero-orbit{animation:observatory-starlight 14s ease-in-out infinite;}
+.hero-figure{animation:observatory-reveal 1s .55s both;}
+.content-flow .section-title{animation:observatory-reveal .85s .35s both;}
+.project-grid .project-card{animation:observatory-reveal .85s cubic-bezier(.2,.7,.2,1) both;}
+.project-grid .project-card:nth-child(1){animation-delay:.42s}
+.project-grid .project-card:nth-child(2){animation-delay:.53s}
+.project-grid .project-card:nth-child(3){animation-delay:.64s}
+.site-header nav a{
+  position:relative;
+  transition:color .22s ease;
+}
+.site-header nav a:after{
+  content:"";position:absolute;left:0;right:0;bottom:-9px;height:1px;
+  background:var(--accent-sage);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
+}
+.site-header nav a:hover:after,.site-header nav a:focus-visible:after{transform:scaleX(1)}
+.button{transition:background .24s ease,border-color .24s ease,transform .24s ease,box-shadow .24s ease}
+.button:hover{transform:translateY(-2px)}
+.button-light:hover{box-shadow:0 9px 24px rgba(231,233,236,.10)}
+.project-card{transition:border-color .28s ease,transform .28s ease,box-shadow .28s ease}
+.project-card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(0,0,0,.20)}
+.project-name-row svg{transition:transform .25s ease,color .25s ease}
+.project-card:hover .project-name-row svg{transform:translate(3px,-3px);color:var(--accent-sage)}
+.section-title a svg{transition:transform .25s ease}
+.section-title a:hover svg{transform:translate(3px,-3px)}
+@media(prefers-reduced-motion:reduce){
+ .hero-copy .eyebrow,.hero-copy .tiny-line,.hero-copy h1,.hero-copy .hero-lead,
+ .hero-copy .hero-actions,.hero-art,.hero-orbit,.hero-orbit .orbit-motion-primary,
+ .hero-orbit .orbit-motion-secondary,.hero-figure,.content-flow .section-title,
+ .project-grid .project-card{animation:none!important;opacity:1!important;transform:none!important}
+ .site-header nav a:after,.button,.project-card,.project-name-row svg,
+ .section-title a svg{transition:none!important}
+}
