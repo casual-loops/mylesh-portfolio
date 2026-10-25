@@ -1,6 +1,5 @@
-import {Reveal} from '@/components/reveal';
-import Link from 'next/link';
-import {PageHeader,SectionTitle} from '@/components/site-shell';
-import {ArrowUpRight} from 'lucide-react';
-export const metadata={title:'CV'};
-export default function CV(){return <><PageHeader index="05" kicker="CURRICULUM VITAE" title="The professional overview."><p>My experience, technical interests, and the tools I've worked with, gathered in one place.</p></PageHeader><div className="shell interior-content cv-layout"><Reveal className="cv-main"><div><SectionTitle index="01" name="PROFILE"/><p>Systems administrator working across identity management, enterprise applications, service operations, and increasingly software and infrastructure engineering through independent projects.</p><SectionTitle index="02" name="EXPERIENCE"/><h2>Systems Administration (Tier 2)</h2><p>Forney ISD · June 2025 to present</p><h2>IT Support Coordinator</h2><p>Forney ISD · Through May 2025</p><Link className="text-link" href="/experience">Full experience <ArrowUpRight size={16}/></Link></div></Reveal><Reveal className="cv-aside"><aside className="cv-sidebar"><h2>Technical areas</h2><ul><li>Identity and access management</li><li>Google Workspace administration</li><li>IT service management</li><li>Python and web applications</li><li>PostgreSQL and databases</li><li>Containers and virtualization</li><li>Cloud infrastructure</li></ul><div className="cv-download"><h2>PDF résumé</h2><p>A verified résumé PDF hasn't been supplied yet. This link will be activated after the final document is added.</p></div></aside></Reveal></div></>}
+import { redirect } from 'next/navigation';
+
+export default function CVRedirect() {
+  redirect('/experience#resume');
+}

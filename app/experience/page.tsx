@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Download } from 'lucide-react';
 import { Reveal } from '@/components/reveal';
 import { CertificationCarousel } from '@/components/certification-carousel';
 
@@ -82,6 +82,7 @@ export default function Experience() {
         <p className="eyebrow">04 <span className="eyebrow-divider">//</span> EXPERIENCE</p>
         <h1>Different roles.<br /><span>One connected perspective.</span></h1>
         <p>My path through operations, service delivery, reporting, and systems administration has taught me to look beyond individual problems and understand the technology, people, and processes surrounding them.</p>
+        <a className="experience-resume-link" href="/Myles-Hobdy-Resume.pdf" download="Myles-Hobdy-Resume.pdf"><Download size={18} aria-hidden="true" /> Download résumé <ArrowUpRight size={16} aria-hidden="true" /></a>
       </header>
 
       <nav className="experience-section-nav" aria-label="Experience page sections">
@@ -175,9 +176,9 @@ export default function Experience() {
         </div>
         <CertificationCarousel />
       </section>
-      <div className="experience-next">
-        <p>Want the technical overview?</p>
-        <Link href="/cv">Explore my CV <ArrowUpRight size={18} aria-hidden="true" /></Link>
+      <div id="resume" className="experience-next">
+        <p>Prefer the concise version? Get my two-page résumé.</p>
+        <a href="/Myles-Hobdy-Resume.pdf" download="Myles-Hobdy-Resume.pdf"><Download size={17} aria-hidden="true" /> Download résumé <ArrowUpRight size={18} aria-hidden="true" /></a>
       </div>
     </div>
   );

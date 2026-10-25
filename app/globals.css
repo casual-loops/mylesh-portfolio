@@ -1011,3 +1011,11 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
  html{scroll-behavior:auto;}
  .back-to-top{transition:none;}
 }
+
+/* Résumé download CTAs: distinct from the page-section navigation. */
+.experience-resume-link{display:inline-flex;align-items:center;gap:12px;margin-top:26px;padding:13px 17px;border:1px solid rgba(118,169,198,.5);color:#DCEAF3;background:#101820;font-size:14px;font-weight:500;transition:border-color .2s,background .2s;}
+.experience-resume-link:hover{border-color:#9DC5DF;background:#1B2833;color:#FFF;}
+.experience-resume-link svg:first-child,.experience-next a svg:first-child{color:#D6A34F;}
+.experience-next{scroll-margin-top:110px;}
+.experience-next a{gap:10px;}
+@media(prefers-reduced-motion:reduce){.experience-resume-link{transition:none;}}
