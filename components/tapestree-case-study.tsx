@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, ArrowUpRight, GitBranch, ShieldCheck, Database, Cloud, FlaskConical } from 'lucide-react';
 import { Reveal } from '@/components/reveal';
 
@@ -40,22 +41,13 @@ export default function TapestreeCaseStudy() {
               <a href="#tp-workflow">Explore the lifecycle <ArrowUpRight size={17} aria-hidden="true" /></a>
               <a href="#tp-architecture">Technical architecture <ArrowUpRight size={17} aria-hidden="true" /></a>
             </div>
-            <p className="tp-private-note">Independent product · Private source repository · Active development</p>
+            <p className="tp-private-note">Independent product · Private source repository · Active development · Public demo and domain pending</p>
           </div>
-          <div className="tp-lifecycle-visual" role="img" aria-label="Conceptual change lifecycle: plan, prepare, execute, validate, complete, and preserve evidence">
-            <div className="tp-visual-top"><span>CHANGE / LIFECYCLE</span><span>WORKFLOW 01–05</span></div>
-            <div className="tp-visual-flow">
-              {lifecycle.map((step, index) => (
-                <div className="tp-visual-stage" key={step.step}>
-                  <span className="tp-visual-number">{step.step}</span>
-                  <span className="tp-visual-name">{step.name}</span>
-                  {index < lifecycle.length - 1 && <span className="tp-visual-connector" aria-hidden="true">↓</span>}
-                </div>
-              ))}
-            </div>
-            <div className="tp-visual-evidence"><span>↳</span> EVIDENCE + HISTORY + LESSONS</div>
-            <p>CONCEPTUAL WORKFLOW <span>NOT AN APPLICATION SCREENSHOT</span></p>
-          </div>
+          <figure className="tp-product-shot">
+            <div className="tp-shot-top"><span>PRODUCT / HOME WORKSPACE</span><span>PREVIEW 01</span></div>
+            <Image src="/images/tapestree-product-homepage.png" alt="Tapestree product homepage showing the current application interface" width={1440} height={900} sizes="(max-width: 850px) 100vw, 48vw" priority />
+            <figcaption>ACTUAL PRODUCT INTERFACE <span>IN DEVELOPMENT</span></figcaption>
+          </figure>
         </div>
         <div className="dd-meta-strip">
           <div><span>ROLE</span><strong>Product design · Full-stack engineering · Cloud deployment</strong></div>
@@ -86,6 +78,7 @@ export default function TapestreeCaseStudy() {
       <section id="tp-workflow" className="dd-story-section">
         <div className="dd-section-heading"><span>02 <b>//</b></span> PRODUCT & WORKFLOW</div>
         <Reveal className="dd-heading-row"><h2>A change is more than <em>an approval.</em></h2><p>From preparation through validation, the lifecycle needs to preserve useful context for the people doing the work and the people who inherit it later.</p></Reveal>
+        <p className="tp-lifecycle-note">WORKFLOW OVERVIEW // PLAN THROUGH COMPLETION</p>
         <div className="tp-lifecycle-grid">
           {lifecycle.map(step => <Reveal key={step.step} className="tp-lifecycle-card">
             <span>{step.step} //</span><h3>{step.name}</h3><p>{step.detail}</p>
