@@ -259,3 +259,115 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
  .hero-disciplines{display:grid;gap:4px;justify-items:start;}
  .hero-disciplines span+span::before{display:none;}
 }
+
+/* Shared Observatory mark: ochre nucleus and independently orbiting satellites. */
+.orbit-mark{
+  --orbit-diameter:39px;
+  position:relative;
+  display:inline-block;
+  width:var(--orbit-diameter);
+  height:var(--orbit-diameter);
+  flex:0 0 var(--orbit-diameter);
+  border:0;
+  border-radius:0;
+  transform:none;
+  overflow:visible;
+}
+.orbit-mark-small{--orbit-diameter:30px;}
+.orbit-mark::before{content:none;}
+.orbit-mark-ring{
+  position:absolute;
+  inset:2px;
+  border:1px solid rgba(177,196,209,.8);
+  border-radius:50%;
+}
+.orbit-mark-center{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:7px;
+  height:7px;
+  transform:translate(-50%,-50%);
+  background:var(--accent-ochre);
+  border-radius:50%;
+  box-shadow:0 0 9px rgba(214,163,79,.2);
+}
+.orbit-mark-track{
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  transform-origin:50% 50%;
+}
+.orbit-mark-track-red{animation:observatory-mark-orbit 14s linear infinite;}
+.orbit-mark-track-blue{animation:observatory-mark-orbit-reverse 19s linear infinite;}
+.orbit-mark-satellite{
+  position:absolute;
+  top:0;
+  left:50%;
+  width:6px;
+  height:6px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px solid var(--bg);
+}
+.orbit-mark-satellite-red{background:var(--accent-terra);}
+.orbit-mark-satellite-blue{background:var(--accent-sage);}
+@keyframes observatory-mark-orbit{from{transform:rotate(35deg)}to{transform:rotate(395deg)}}
+@keyframes observatory-mark-orbit-reverse{from{transform:rotate(225deg)}to{transform:rotate(-135deg)}}
+
+/* Navigation: quiet technical precision and a persistent active-route signal. */
+.site-header .header-nav{
+  display:flex;
+  align-items:center;
+  gap:clamp(12px,2.25vw,36px);
+}
+.site-header .header-nav-link{
+  position:relative;
+  isolation:isolate;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:8px 5px;
+  color:#A9B5C2;
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:.018em;
+  transition:color .22s ease;
+}
+.site-header .header-nav-link:hover,
+.site-header .header-nav-link:focus-visible,
+.site-header .header-nav-link.is-active{color:#EFF1F4;}
+.site-header .header-nav-link::after{bottom:4px;left:5px;right:5px;opacity:.5;}
+.site-header .header-nav-link.is-active::after{display:none;}
+.header-nav-indicator{
+  position:absolute;
+  bottom:4px;
+  left:5px;
+  right:5px;
+  height:2px;
+  border-radius:3px;
+  background:var(--accent-sage);
+  box-shadow:0 0 10px rgba(118,169,198,.18);
+  pointer-events:none;
+}
+.brand{white-space:nowrap;}
+.brand:hover .orbit-mark-center{box-shadow:0 0 14px rgba(214,163,79,.4);}
+@media(max-width:700px){
+  .site-header .header-nav{gap:clamp(7px,1.8vw,16px);}
+  .site-header .header-nav-link{font-size:12px;min-height:40px;padding:8px 3px;}
+  .site-header .header-nav-link::after{left:3px;right:3px;}
+  .header-nav-indicator{left:3px;right:3px;}
+  .site-header .brand{gap:9px;letter-spacing:.11em;font-size:11px;}
+}
+@media(max-width:440px){
+  .site-header .brand>span:last-child{font-size:10px;letter-spacing:.075em;}
+  .site-header .header-nav{gap:6px;}
+  .site-header .header-nav-link{font-size:11px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .orbit-mark-track-red,.orbit-mark-track-blue{animation:none!important;}
+  .orbit-mark-track-red{transform:rotate(35deg);}
+  .orbit-mark-track-blue{transform:rotate(225deg);}
+  .site-header .header-nav-link{transition:none!important;}
+}
