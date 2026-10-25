@@ -30,7 +30,7 @@ export default function OpenGraphImage() {
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 18, maxWidth: 900 }}>
-          <span style={{ fontSize: 17, color: '#D6A34F', letterSpacing: 5 }}>ENGINEERING PORTFOLIO // 2026</span>
+          <span style={{ fontSize: 17, color: '#D6A34F', letterSpacing: 5 }}>ENGINEERING PORTFOLIO // SELECTED WORK</span>
           <div style={{ display: 'flex', flexDirection: 'column', fontSize: 72, lineHeight: 1.11, fontWeight: 400, letterSpacing: -3 }}>
             <span>Curious about how it works.</span>
             <span style={{ color: '#9FB8CB' }}>Driven to build it better.</span>
