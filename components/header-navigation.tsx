@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, useReducedMotion } from 'motion/react';
+import { Download } from 'lucide-react';
 
 const links = [
   { label: 'Work', href: '/work' },
@@ -38,6 +39,10 @@ export function HeaderNavigation() {
           </Link>
         );
       })}
+      <a className="header-resume-cta" href="/Myles-Hobdy-Resume.pdf" download="Myles-Hobdy-Resume.pdf" aria-label="Download résumé PDF">
+        <Download size={16} strokeWidth={1.9} aria-hidden="true" />
+        <span>Résumé</span>
+      </a>
     </nav>
   );
 }
