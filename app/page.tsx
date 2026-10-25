@@ -27,12 +27,14 @@ export default function Home() {
       <section>
         <Reveal>
         <SectionTitle index="02" name="SELECTED WORK" href="/work" label="View all work" />
+        </Reveal>
         <div className="project-grid">
           {projects.map((project, index) => (
-            <ProjectCard key={project.slug} project={project} index={index} />
+            <Reveal key={project.slug} delay={index * 0.09}>
+              <ProjectCard project={project} index={index} />
+            </Reveal>
           ))}
         </div>
-        </Reveal>
       </section>
     </div>
     </>
