@@ -245,3 +245,17 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
 @media(prefers-reduced-motion:reduce){
   .hero-instrument{transform:none!important;}
 }
+
+/* Homepage disciplines replace the duplicated personal-name eyebrow. */
+.hero-disciplines{display:flex;align-items:center;flex-wrap:wrap;gap:10px 0;max-width:720px;letter-spacing:.17em;line-height:1.6;}
+.hero-disciplines span{display:inline-flex;align-items:center;white-space:nowrap;}
+.hero-disciplines span+span::before{content:"/";color:#768898;margin:0 13px;font-weight:300;}
+@media(max-width:700px){
+ .hero-disciplines{gap:6px 0;font-size:10px;letter-spacing:.09em;}
+ .hero-disciplines span+span::before{margin:0 8px;}
+ .brand{letter-spacing:.15em;font-size:12px;}
+}
+@media(max-width:410px){
+ .hero-disciplines{display:grid;gap:4px;justify-items:start;}
+ .hero-disciplines span+span::before{display:none;}
+}
