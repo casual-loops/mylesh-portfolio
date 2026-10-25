@@ -516,3 +516,12 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
 .project-card-domain-doctor{--project-accent:#76A9C6;}
 .project-card-tapestree{--project-accent:#D56668;}
 .project-card-infrastructure-lab{--project-accent:#D6A34F;}
+
+/* Selected Work: restrained hover treatment instead of colored outlines. */
+.project-card:hover,
+.project-card:focus-visible{
+  border-color:rgba(171,180,194,.38);
+}
+.project-card::after{
+  display:none;
+}
