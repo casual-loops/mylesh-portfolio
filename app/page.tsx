@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { HeroOrbit } from '@/components/hero-orbit';
+import { projects } from '@/content/site';
+import { ProjectCard } from '@/components/project-card';
+import { SectionTitle } from '@/components/site-shell';
 
 export default function Home() {
   return (
@@ -18,5 +21,15 @@ export default function Home() {
       </div>
       <div className="hero-figure">⊕ <span>FIG. 01 / THE OBSERVATORY</span></div>
     </section>
+    <div className="shell content-flow">
+      <section>
+        <SectionTitle index="02" name="SELECTED WORK" href="/work" label="View all work" />
+        <div className="project-grid">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.slug} project={project} index={index} />
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }
