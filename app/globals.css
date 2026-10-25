@@ -512,3 +512,7 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
  .project-diagram,.project-open{transition:none!important;}
  .project-card:hover .project-diagram{transform:none!important;}
 }
+
+.project-card-domain-doctor{--project-accent:#76A9C6;}
+.project-card-tapestree{--project-accent:#D56668;}
+.project-card-infrastructure-lab{--project-accent:#D6A34F;}
