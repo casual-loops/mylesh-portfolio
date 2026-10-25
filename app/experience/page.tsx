@@ -65,6 +65,15 @@ const roles = [
   },
 ];
 
+const skillGroups = [
+  { id: '01', name: 'Systems & infrastructure', accent: 'blue', tools: ['Linux', 'Windows', 'macOS', 'Proxmox VE', 'Docker', 'Docker Compose', 'Caddy', 'Postfix', 'Home Assistant', 'FileWave', 'Checkmk', 'PaperCut', 'Avigilon'] },
+  { id: '02', name: 'Identity & enterprise platforms', accent: 'ochre', tools: ['RapidIdentity', 'Google Workspace', 'Google Cloud', 'Skyward', 'Frontline', 'Clever', 'Incident IQ', 'ServiceNow', 'Atlassian', 'Supabase'] },
+  { id: '03', name: 'Software & development', accent: 'red', tools: ['Python', 'TypeScript', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'Node.js', 'REST APIs', 'Git', 'GitHub', 'GitHub Actions', 'Playwright'] },
+  { id: '04', name: 'Data & observability', accent: 'blue', tools: ['PostgreSQL', 'SQL', 'Tableau', 'Checkmk', 'Umami', 'Log Analytics', 'Azure Monitor'] },
+  { id: '05', name: 'Cloud & deployment', accent: 'ochre', tools: ['Microsoft Azure', 'Azure Container Apps', 'Azure Container Registry', 'Azure Key Vault', 'Supabase', 'Docker', 'GitHub Actions'] },
+  { id: '06', name: 'Operations & automation', accent: 'red', tools: ['PowerShell', 'ITIL', 'Change management', 'Incident & problem management', 'Knowledge management', 'API integrations', 'Technical documentation'] },
+];
+
 export default function Experience() {
   return (
     <div className="shell experience-page">
@@ -126,6 +135,29 @@ export default function Experience() {
             <h3>Following the questions</h3>
             <p>I study networking, cloud technologies, programming, and the fundamentals behind them. Whenever possible, I turn what I'm learning into experiments, working systems, and small projects rather than stopping at theory.</p>
           </Reveal>
+        </div>
+      </section>
+      <section className="experience-skills" aria-labelledby="experience-skills-heading">
+        <div className="experience-history-heading">
+          <h2 id="experience-skills-heading"><span>03 <b>//</b></span> SKILLS & TECHNOLOGIES</h2>
+          <span>TOOLS, PLATFORMS & PRACTICES</span>
+        </div>
+        <Reveal className="experience-skills-intro">
+          <h3>A toolkit built across disciplines.</h3>
+          <p>From the systems I operate to the software I build, these are technologies and practices I've worked with through professional responsibilities and independent projects. The list reflects exposure, not equal proficiency in every tool.</p>
+        </Reveal>
+        <div className="experience-skills-grid">
+          {skillGroups.map(group => (
+            <Reveal key={group.id} className={`experience-skill-group skill-accent-${group.accent}`}>
+              <div className="experience-skill-heading">
+                <span>{group.id} //</span>
+                <h4>{group.name}</h4>
+              </div>
+              <div className="experience-skill-tools">
+                {group.tools.map(tool => <span key={tool}>{tool}</span>)}
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
       <div className="experience-next">
