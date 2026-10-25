@@ -4,6 +4,7 @@ import { HeroOrbit } from '@/components/hero-orbit';
 import { projects } from '@/content/site';
 import { ProjectCard } from '@/components/project-card';
 import { SectionTitle } from '@/components/site-shell';
+import { Reveal } from '@/components/reveal';
 
 export default function Home() {
   return (
@@ -24,12 +25,14 @@ export default function Home() {
     </section>
     <div className="shell content-flow">
       <section>
+        <Reveal>
         <SectionTitle index="02" name="SELECTED WORK" href="/work" label="View all work" />
         <div className="project-grid">
           {projects.map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}
         </div>
+        </Reveal>
       </section>
     </div>
     </>
