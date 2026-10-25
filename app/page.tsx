@@ -12,7 +12,7 @@ export default function Home() {
     <section className="hero shell">
       <HeroScene />
       <div className="hero-copy">
-        <p className="eyebrow">MYLES <span className="eyebrow-divider">/</span> MULTIDISCIPLINARY ENGINEER</p>
+        <p className="eyebrow hero-disciplines"><span>Systems &amp; Infrastructure</span><span>Software Engineering</span><span>Cloud &amp; Platform Engineering</span></p>
         <span className="tiny-line" />
         <h1>Somewhere<br />between <span>the wire</span><br />and <span>the software.</span></h1>
         <p className="hero-lead">I like finding out how things work, what connects them, and what I can build along the way.</p>
@@ -21,7 +21,6 @@ export default function Home() {
           <Link className="button button-outline" href="/about">About me</Link>
         </div>
       </div>
-      <div className="hero-figure">⊕ <span>FIG. 01 / THE OBSERVATORY</span></div>
     </section>
     <div className="shell content-flow">
       <section>
