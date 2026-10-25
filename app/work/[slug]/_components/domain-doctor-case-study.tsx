@@ -1,4 +1,4 @@
-import { CaseStudyBackLink, CaseStudyNavigation, CaseStudySectionLabel } from '@/components/case-study-layout';
+import { CaseStudyBackLink, CaseStudyNavigation, CaseStudySectionLabel } from './case-study-layout';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight, GitBranch, ShieldCheck, ServerCog, Layers } from 'lucide-react';
