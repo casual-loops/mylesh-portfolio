@@ -430,3 +430,25 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
 @media(prefers-reduced-motion:reduce){
  .hero-cta-arrow{transition:none!important;}
 }
+
+/* Hero typography: intentional two-line rhythm at desktop, natural wrap on small screens. */
+.hero-copy{width:min(960px,61%);}
+.hero h1{font-size:clamp(42px,3.65vw,69px);line-height:1.13;letter-spacing:-.058em;margin-bottom:30px;}
+.hero-headline-line{display:block;white-space:nowrap;}
+.hero-headline-line em{font-style:normal;}
+.hero h1 .hero-accent-red{color:var(--accent-terra);}
+.hero h1 .hero-accent-blue{color:var(--accent-sage);}
+.hero-lead{max-width:620px;font-size:clamp(18px,1.28vw,22px);line-height:1.58;}
+@media(max-width:1250px){
+ .hero-copy{width:min(780px,67%);}
+ .hero h1{font-size:clamp(39px,4.05vw,55px);}
+}
+@media(max-width:850px){
+ .hero-copy{width:100%;}
+ .hero h1{font-size:clamp(40px,6.7vw,57px);}
+ .hero-headline-line{white-space:normal;}
+}
+@media(max-width:700px){
+ .hero h1{font-size:clamp(38px,8.1vw,52px);line-height:1.12;}
+ .hero-lead{font-size:17px;}
+}
