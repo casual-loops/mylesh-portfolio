@@ -783,3 +783,28 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
  .about-v2-interests>span{padding:8px 10px;font-size:11px;}
  .about-v2-reflection{padding:23px;}
 }
+
+/* Off the Clock: one aligned editorial grid instead of two disconnected rows. */
+.about-v2-personal-layout{
+ display:grid;
+ grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+ gap:clamp(30px,5vw,90px);
+ align-items:start;
+ margin-bottom:clamp(28px,3vw,48px);
+}
+.about-v2-personal-sidebar h2{
+ font-family:var(--font-display);
+ font-size:clamp(34px,3.65vw,63px);
+ font-weight:300;
+ line-height:1.16;
+ letter-spacing:-.05em;
+ margin:0 0 30px;
+ max-width:650px;
+}
+.about-v2-personal-sidebar h2 span{color:#9BB7CA;}
+.about-v2-personal-sidebar .about-v2-interests{max-width:470px;}
+.about-v2-personal-layout .about-v2-personal-copy p:first-child{color:#D2DCE5;}
+@media(max-width:850px){
+ .about-v2-personal-layout{grid-template-columns:1fr;gap:25px;}
+ .about-v2-personal-sidebar h2{margin-bottom:22px;}
+}
