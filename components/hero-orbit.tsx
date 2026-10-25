@@ -22,6 +22,6 @@ export function HeroOrbit(){return <svg className="hero-orbit" viewBox="0 0 900 
 <g fill="#E6E8ED" stroke="#96AABC"><circle cx="490" cy="96" r="4"/><circle cx="490" cy="809" r="5" fill="#141416"/><circle cx="780" cy="258" r="4"/><circle cx="184" cy="646" r="3"/></g>
 <circle cx="182" cy="628" r="19" fill="#33302F" stroke="#D56668"/><circle cx="820" cy="267" r="12" fill="#252527" stroke="#D56668"/>
 <g fill="none" stroke="#8A9AA9" opacity=".7"><path d="M238 225 H179 L156 199 H107 M778 261 H822 L845 235 H880 M184 649 L157 696 H95 M768 649 L802 690 H872"/></g>
-<g fill="#CECBC4" fontFamily="monospace" fontSize="11" letterSpacing="1.5"><text x="106" y="189">01 / SYSTEMS</text><text x="747" y="224">02 / SOFTWARE</text><text x="95" y="715">03 / INFRASTRUCTURE</text><text x="771" y="708">04 / IDEAS</text></g>
+<g fill="#CECBC4" fontFamily="monospace" fontSize="11" letterSpacing="1.5"><text x="106" y="189">01 / SYSTEMS</text><text x="747" y="224">02 / SOFTWARE</text><text x="95" y="715">03 / INFRASTRUCTURE</text><text x="771" y="708">04 / CURIOSITY</text></g>
 <g fill="none" stroke="#76A9C6" opacity=".5"><circle cx="782" cy="451" r="23"/><circle cx="782" cy="451" r="7"/><path d="M752 451 H812 M782 421 V481"/></g>
 </svg>}
