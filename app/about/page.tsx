@@ -67,8 +67,11 @@ export default function About() {
             <h2>There's a universe beyond the screen.</h2>
           </div>
           <div className="about-beyond-content">
-            <p>Space and science fiction have a particular hold on my imagination. I like the questions they raise about what we understand, what we haven't discovered, and what might be possible next.</p>
-            <p>Closer to home, I like learning by building. My home lab gives me a place to experiment with virtualization, networking, and self-hosted services, then follow whatever question comes next.</p>
+            <p>Space and science fiction have a particular hold on my imagination. I love the questions they raise about what we understand, what we haven't discovered, and what might be possible next.</p>
+            <p>Closer to home, I learn by building. My home lab is where I experiment with virtualization, networking, and self-hosted services, usually following one interesting question straight into another.</p>
+            <p>When I'm not nerding out over technology, I'm probably studying mathematics or physics, playing a video game, or, when the Texas weather cooperates, exploring one of the many lakes and trails around the state.</p>
+            <p>I'm a traveler at heart. I hope to see much more of the world someday, meet people whose lives look different from mine, and discover the experiences that connect us despite those differences.</p>
+            <p>More than anything, I believe curiosity is one of our best responses to the negativity in the world. There's so much to learn, so much to appreciate, and something extraordinary about the fact that we're here at all.</p>
             <div className="about-interest-row" aria-label="Personal interests">
               <span><Orbit size={17} aria-hidden="true" /> Space & sci-fi</span>
               <span><Wrench size={17} aria-hidden="true" /> Hands-on projects</span>
