@@ -187,3 +187,33 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
  .site-header nav a:after,.button,.project-card,.project-name-row svg,
  .section-title a svg{transition:none!important}
 }
+
+/* Orbital mechanics: true rotation about the planet's SVG-space center. */
+@keyframes observatory-revolve-forward{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+@keyframes observatory-revolve-reverse{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(-360deg)}
+}
+.hero-orbit .orbit-motion-primary,
+.hero-orbit .orbit-motion-secondary{
+  transform-box:view-box;
+  transform-origin:490px 452px;
+  will-change:transform;
+}
+.hero-orbit .orbit-motion-primary{
+  animation:observatory-revolve-forward 110s linear infinite;
+}
+.hero-orbit .orbit-motion-secondary{
+  animation:observatory-revolve-reverse 145s linear infinite;
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-orbit .orbit-motion-primary,
+  .hero-orbit .orbit-motion-secondary{
+    animation:none!important;
+    transform:none!important;
+    will-change:auto;
+  }
+}
