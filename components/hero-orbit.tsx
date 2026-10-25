@@ -17,6 +17,8 @@ export function HeroOrbit(){return <svg className="hero-orbit" viewBox="0 0 900 
 <path d="M165 312 Q282 268 398 315 T615 344 T790 321 M178 426 Q298 394 410 434 T635 434 T792 416 M170 525 Q270 489 419 531 T648 527 T795 519 M190 626 Q330 588 466 629 T747 634"/>
 <path d="M354 150 Q272 391 393 751 M473 151 Q412 408 551 753 M578 170 Q541 396 661 718" opacity=".5"/>
 </g>
+{/* Portrait is clipped to the celestial disk, while orbital instrumentation stays outside it. */}
+<image href="/images/observatory-portrait.webp" x="190" y="140" width="600" height="600" preserveAspectRatio="xMidYMid meet" clipPath="url(#clip)" />
 <circle cx="490" cy="452" r="295" fill="none" stroke="url(#rim)" strokeWidth="2"/>
 <g fill="none" stroke="#8A9DAE" strokeWidth="1"><path d="M490 76 V126 M490 774 V846 M68 452 H137 M840 452 H882" opacity=".4"/></g>
 <g fill="#E6E8ED" stroke="#96AABC"><circle cx="490" cy="96" r="4"/><circle cx="490" cy="809" r="5" fill="#141416"/><circle cx="780" cy="258" r="4"/><circle cx="184" cy="646" r="3"/></g>
