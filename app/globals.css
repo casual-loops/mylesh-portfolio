@@ -33,10 +33,10 @@ body{font-family:var(--font-body);font-weight:400;letter-spacing:0;}
   --text:#e9e5dd;
   --muted:#aaa7a3;
   --line:rgba(210,202,190,.19);
-  --blue:#D77D61;
-  --accent-terra:#D77D61;
+  --blue:#D56668;
+  --accent-terra:#D56668;
   --accent-ochre:#D6A34F;
-  --accent-sage:#83B49D;
+  --accent-sage:#76A9C6;
 }
 body{background:#050506;color:var(--text);}
 body:before{background-image:radial-gradient(#cfc8bc .55px,transparent .8px);opacity:.10;}
@@ -46,8 +46,8 @@ body:before{background-image:radial-gradient(#cfc8bc .55px,transparent .8px);opa
 .orbit-mark,.orbit-mark:before{border-color:#D6A34F;}
 .orbit-mark:before{background:#D6A34F;}
 .orbit-mark i{background:#e9e5dd;}
-.orbit-mark b{background:#D77D61;}
-.orbit-mark em{background:#83B49D;}
+.orbit-mark b{background:#D56668;}
+.orbit-mark em{background:#76A9C6;}
 .eyebrow,.hero-figure,.hero-figure span{color:#bcb6ac;}
 .eyebrow-divider{color:var(--accent-ochre);}
 .hero h1 span{color:#d1b49b;}
