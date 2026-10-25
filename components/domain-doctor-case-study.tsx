@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, ArrowUpRight, GitBranch, ShieldCheck, ServerCog, Layers } from 'lucide-react';
 import { Reveal } from '@/components/reveal';
 
@@ -34,19 +35,13 @@ export default function DomainDoctorCaseStudy() {
               <a href="#dd-system">Explore the architecture <ArrowUpRight size={16} aria-hidden="true" /></a>
             </div>
           </div>
-          <div className="dd-instrument" aria-label="Conceptual visualization of the four diagnostic layers">
-            <div className="dd-instrument-top"><span>DOMAIN / INSPECTION</span><span>4 LAYERS</span></div>
-            <div className="dd-instrument-orbit" aria-hidden="true">
-              <div className="dd-orbit-ring dd-orbit-outer" />
-              <div className="dd-orbit-ring dd-orbit-inner" />
-              <div className="dd-orbit-core">D<span>//</span>D</div>
-              <span className="dd-orbit-node dd-node-1" />
-              <span className="dd-orbit-node dd-node-2" />
-              <span className="dd-orbit-node dd-node-3" />
-            </div>
-            <div className="dd-instrument-readout">{diagnostics.map(d => <div key={d.id}><span>{d.id}</span><span>{d.name}</span><span className="dd-readout-mark" /></div>)}</div>
-            <p>CONCEPTUAL SYSTEM DIAGRAM <span>NOT LIVE TELEMETRY</span></p>
-          </div>
+          <figure className="dd-product-shot dd-product-shot-hero">
+            <div className="dd-shot-top"><span>APPLICATION / HOME</span><span>01 // 02</span></div>
+            <a href="https://domaindoctor.fyi/" target="_blank" rel="noopener noreferrer" aria-label="Open the live Domain Doctor application">
+              <Image src="/images/domain-doctor-homepage.png" alt="Domain Doctor application homepage" width={1440} height={900} sizes="(max-width: 1000px) 100vw, 48vw" priority />
+            </a>
+            <figcaption>THE ACTUAL APPLICATION <span>DOMAINDOCTOR.FYI</span></figcaption>
+          </figure>
         </div>
         <div className="dd-meta-strip">
           <div><span>ROLE</span><strong>Independent project · Design, development & operations</strong></div>
@@ -85,6 +80,14 @@ export default function DomainDoctorCaseStudy() {
             <div className="dd-card-foot">{d.examples}</div>
           </Reveal>)}
         </div>
+        <Reveal className="dd-result-showcase">
+          <div className="dd-result-copy"><span>REAL APPLICATION // REPORT VIEW</span><h3>From a domain to a readable report.</h3><p>A completed diagnostic brings the separate checks into a single interface, making it easier to move between the layers and investigate the details.</p></div>
+          <figure className="dd-product-shot dd-product-shot-result">
+            <div className="dd-shot-top"><span>APPLICATION / DIAGNOSTIC REPORT</span><span>02 // 02</span></div>
+            <Image src="/images/domain-doctor-result.png" alt="Domain Doctor diagnostic results interface" width={1440} height={900} sizes="(max-width: 700px) 100vw, 90vw" />
+            <figcaption>ACTUAL DIAGNOSTIC RESULTS <span>DOMAIN DOCTOR</span></figcaption>
+          </figure>
+        </Reveal>
       </section>
 
       <section id="dd-system" className="dd-story-section">
