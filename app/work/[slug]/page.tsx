@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { projects } from '@/content/site';
@@ -15,10 +16,7 @@ export async function generateMetadata({ params }: ProjectParams): Promise<Metad
   const { slug } = await params;
   const project = projects.find(item => item.slug === slug);
   if (!project) return { title: 'Project not found' };
-  return {
-    title: project.name,
-    description: project.summary,
-  };
+  return pageMetadata({ title: project.name, description: project.summary, path: `/work/${project.slug}` });
 }
 
 export default async function ProjectDetail({ params }: ProjectParams) {
