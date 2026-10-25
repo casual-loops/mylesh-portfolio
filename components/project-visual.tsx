@@ -13,7 +13,7 @@ export function ProjectVisual({ slug }: { slug: string }) {
         <circle className="diagram-scan-pulse" cx="170" cy="119" r="11" fill="#151C23" stroke="#76A9C6" strokeWidth="1.5"/>
         <circle cx="170" cy="119" r="3" fill="#76A9C6"/>
         <path d="M221 68H255L273 49H310 M230 157H255L271 177H310" fill="none" stroke="#9EB0BD" strokeOpacity=".48"/>
-        <g fill="#AEBCCA" fontFamily="monospace" fontSize="9" letterSpacing="1.1"><text x="282" y="39">DNS</text><text x="282" y="193">TLS</text><text x="105" y="216">HTTP // HEADERS</text></g>
+        <g fill="#AEBCCA" fontFamily="monospace" fontSize="9" letterSpacing="1.1"><text x="282" y="39">DNS</text><text x="282" y="193">TLS</text><text x="38" y="43">HTTP // HEADERS</text></g>
         <g stroke="#76A9C6" fill="none" strokeWidth="1"><circle cx="310" cy="49" r="5"/><circle cx="310" cy="177" r="5"/></g>
         <path d="M288 83H375 M288 94H356 M288 105H387 M288 116H341" stroke="#9CB0BF" strokeOpacity=".3" strokeWidth="2"/>
         <path className="diagram-readout" d="M288 83H333 M288 94H316" stroke="url(#dd-beam)" strokeWidth="2"/>
@@ -48,7 +48,7 @@ export function ProjectVisual({ slug }: { slug: string }) {
         </defs>
         <text x="54" y="45" fill="#A9B9C4" fontFamily="monospace" fontSize="9" letterSpacing="1.5">THE HOME LAB</text>
         <path d="M54 55H118" stroke="#76A9C6" strokeOpacity=".45"/>
-        <g transform="translate(132 36)">
+        <g transform="translate(132 19)">
           <path d="M14 8L170 8L185 21L185 180L170 192L14 192L0 180L0 21Z" fill="#0D1115" stroke="#617587" strokeWidth="1.2"/>
           <path d="M14 8L170 8L185 21L15 21Z" fill="#26303A" opacity=".7"/>
           <rect x="15" y="26" width="155" height="157" rx="3" fill="url(#lab-chassis)" stroke="#435462"/>
