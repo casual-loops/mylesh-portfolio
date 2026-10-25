@@ -808,3 +808,15 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
  .about-v2-personal-layout{grid-template-columns:1fr;gap:25px;}
  .about-v2-personal-sidebar h2{margin-bottom:22px;}
 }
+
+/* About intro: full-width editorial heading, compact supporting copy. */
+.about-page-v2 .about-v2-intro-grid{display:flex;flex-direction:column;align-items:flex-start;gap:18px;}
+.about-page-v2 .about-v2-intro h1{font-size:clamp(36px,4.5vw,78px);line-height:1.12;white-space:nowrap;max-width:100%;}
+.about-page-v2 .about-v2-intro-grid>div{max-width:730px;}
+.about-page-v2 .about-v2-intro-grid>div>p{margin-bottom:14px;}
+@media(max-width:1000px){
+ .about-page-v2 .about-v2-intro h1{white-space:normal;}
+}
+@media(max-width:580px){
+ .about-page-v2 .about-v2-intro h1{font-size:clamp(38px,9vw,55px);}
+}
