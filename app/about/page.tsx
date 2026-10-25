@@ -13,7 +13,7 @@ const interests = [
 export default function About() {
   return (
     <div className="shell about-page">
-      <header className="about-intro">
+      <header className="about-intro avatar-header about-avatar-header">
         <p className="eyebrow about-kicker">03 <span className="eyebrow-divider">//</span> ABOUT</p>
         <div className="about-intro-grid">
           <h1>Always curious.<br /><span>Usually building.</span></h1>
@@ -23,6 +23,7 @@ export default function About() {
             <Link href="/work" className="about-inline-link">See what I'm building <ArrowUpRight size={18} aria-hidden="true" /></Link>
           </div>
         </div>
+        <img className="page-avatar page-avatar-about" src="/images/avatars/about-standing.webp" alt="Cartoon illustration of Myles standing casually" width={331} height={993} />
       </header>
 
       <Reveal className="about-story">
