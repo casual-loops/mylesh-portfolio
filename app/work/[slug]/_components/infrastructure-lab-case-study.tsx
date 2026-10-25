@@ -1,5 +1,6 @@
+import { CaseStudyBackLink, CaseStudyNavigation, CaseStudySectionLabel } from './case-study-layout';
 import Link from 'next/link';
-import { ArrowLeft, ArrowUpRight, Server, Network, Activity, Database, ShieldCheck, GitBranch } from 'lucide-react';
+import { ArrowUpRight, Server, Network, Activity, Database, ShieldCheck, GitBranch } from 'lucide-react';
 import { Reveal } from '@/components/reveal';
 
 const domains = [
@@ -20,7 +21,7 @@ export default function InfrastructureLabCaseStudy() {
   return (
     <article className="shell lab-case">
       <header className="lab-hero">
-        <Link href="/work" className="dd-back"><ArrowLeft size={16} aria-hidden="true" /> All work</Link>
+        <CaseStudyBackLink />
         <p className="eyebrow">02 <span className="eyebrow-divider">//</span> SELECTED WORK <span className="dd-hero-slash">//</span> CASE STUDY 03</p>
         <div className="lab-hero-grid">
           <div>
@@ -54,15 +55,10 @@ export default function InfrastructureLabCaseStudy() {
         </div>
       </header>
 
-      <nav className="dd-section-nav" aria-label="Infrastructure Lab case study sections">
-        <a href="#lab-why"><span>01 //</span> Why I built it</a>
-        <a href="#lab-architecture"><span>02 //</span> Architecture</a>
-        <a href="#lab-operations"><span>03 //</span> Operations</a>
-        <a href="#lab-learning"><span>04 //</span> What it teaches me</a>
-      </nav>
+      <CaseStudyNavigation sections={[{"id":"lab-why","label":"Why I built it"},{"id":"lab-architecture","label":"Architecture"},{"id":"lab-operations","label":"Operations"},{"id":"lab-learning","label":"What it teaches me"}]} />
 
       <section id="lab-why" className="dd-story-section">
-        <div className="dd-section-heading"><span>01 <b>//</b></span> WHY I BUILT IT</div>
+        <CaseStudySectionLabel index="01" title="WHY I BUILT IT" />
         <Reveal className="dd-story-split">
           <h2>From knowing the concepts to <em>owning the consequences.</em></h2>
           <div className="dd-prose">
@@ -74,7 +70,7 @@ export default function InfrastructureLabCaseStudy() {
       </section>
 
       <section id="lab-architecture" className="dd-story-section">
-        <div className="dd-section-heading"><span>02 <b>//</b></span> HOW THE LAB IS ORGANIZED</div>
+        <CaseStudySectionLabel index="02" title="HOW THE LAB IS ORGANIZED" />
         <Reveal className="dd-heading-row"><h2>Not just machines. <em>Connected services.</em></h2><p>The environment is organized around infrastructure functions, from core virtualization to private application delivery and operational resilience.</p></Reveal>
         <div className="lab-domain-grid">
           {domains.map(domain=><Reveal key={domain.number} className="lab-domain-card">
@@ -100,7 +96,7 @@ export default function InfrastructureLabCaseStudy() {
       </section>
 
       <section id="lab-operations" className="dd-story-section">
-        <div className="dd-section-heading"><span>03 <b>//</b></span> OPERATING THE ENVIRONMENT</div>
+        <CaseStudySectionLabel index="03" title="OPERATING THE ENVIRONMENT" />
         <Reveal className="dd-heading-row"><h2>Building it is fun. <em>Keeping it healthy is the work.</em></h2><p>I treat the lab as infrastructure with maintenance, monitoring, change records, and recovery obligations, not as a collection of machines that simply need to stay powered on.</p></Reveal>
         <div className="lab-operations-grid">
           <Reveal><Activity size={22} aria-hidden="true"/><h3>Observability</h3><p>Checkmk monitors hosts, services, network reachability, and alert delivery. Prometheus collects time-series metrics from exporters, and Grafana turns them into a visual view of the environment.</p></Reveal>
@@ -111,7 +107,7 @@ export default function InfrastructureLabCaseStudy() {
       </section>
 
       <section id="lab-learning" className="dd-story-section">
-        <div className="dd-section-heading"><span>04 <b>//</b></span> WHAT IT TEACHES ME</div>
+        <CaseStudySectionLabel index="04" title="WHAT IT TEACHES ME" />
         <Reveal className="dd-story-split">
           <h2>One change can touch <em>every layer.</em></h2>
           <div className="dd-prose">

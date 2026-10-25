@@ -1,16 +1,13 @@
 import { WorkGallery } from '@/components/work-gallery';
 import { projects } from '@/content/site';
+import { WorkIntro } from './_components/work-intro';
 
 export const metadata = { title: 'Work' };
 
 export default function Work() {
   return (
     <div className="shell work-page">
-      <header className="work-intro">
-        <p className="eyebrow work-kicker">02 <span className="eyebrow-divider">//</span> THE WORK</p>
-        <h1>Things I've built.<br /><span>Problems I've explored.</span></h1>
-        <p>Some projects start with a problem to solve. Others start with a question I can't leave alone. Here's a little of both.</p>
-      </header>
+      <WorkIntro />
       <WorkGallery projects={projects} />
     </div>
   );

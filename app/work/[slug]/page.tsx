@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { projects } from '@/content/site';
-import DomainDoctorCaseStudy from '@/components/domain-doctor-case-study';
-import TapestreeCaseStudy from '@/components/tapestree-case-study';
-import InfrastructureLabCaseStudy from '@/components/infrastructure-lab-case-study';
+import DomainDoctorCaseStudy from './_components/domain-doctor-case-study';
+import TapestreeCaseStudy from './_components/tapestree-case-study';
+import InfrastructureLabCaseStudy from './_components/infrastructure-lab-case-study';
 
 type ProjectParams = { params: Promise<{ slug: string }> };
 

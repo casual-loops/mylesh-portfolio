@@ -1,6 +1,7 @@
+import { CaseStudyBackLink, CaseStudyNavigation, CaseStudySectionLabel } from './case-study-layout';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, ArrowUpRight, GitBranch, ShieldCheck, ServerCog, Layers } from 'lucide-react';
+import { ArrowUpRight, GitBranch, ShieldCheck, ServerCog, Layers } from 'lucide-react';
 import { Reveal } from '@/components/reveal';
 
 const diagnostics = [
@@ -21,7 +22,7 @@ export default function DomainDoctorCaseStudy() {
   return (
     <article className="shell dd-case">
       <header className="dd-hero">
-        <Link href="/work" className="dd-back"><ArrowLeft size={16} aria-hidden="true" /> All work</Link>
+        <CaseStudyBackLink />
         <p className="eyebrow">02 <span className="eyebrow-divider">//</span> SELECTED WORK <span className="dd-hero-slash">//</span> CASE STUDY 01</p>
         <div className="dd-hero-grid">
           <div>
@@ -50,15 +51,10 @@ export default function DomainDoctorCaseStudy() {
         </div>
       </header>
 
-      <nav className="dd-section-nav" aria-label="Domain Doctor sections">
-        <a href="#dd-problem"><span>01 //</span> The problem</a>
-        <a href="#dd-capabilities"><span>02 //</span> What it examines</a>
-        <a href="#dd-system"><span>03 //</span> How it works</a>
-        <a href="#dd-engineering"><span>04 //</span> Engineering & lessons</a>
-      </nav>
+      <CaseStudyNavigation sections={[{"id":"dd-problem","label":"The problem"},{"id":"dd-capabilities","label":"What it examines"},{"id":"dd-system","label":"How it works"},{"id":"dd-engineering","label":"Engineering & lessons"}]} />
 
       <section id="dd-problem" className="dd-story-section">
-        <div className="dd-section-heading"><span>01 <b>//</b></span> THE PROBLEM</div>
+        <CaseStudySectionLabel index="01" title="THE PROBLEM" />
         <Reveal className="dd-story-split">
           <h2>A domain name is only <em>the beginning.</em></h2>
           <div className="dd-prose">
@@ -70,7 +66,7 @@ export default function DomainDoctorCaseStudy() {
       </section>
 
       <section id="dd-capabilities" className="dd-story-section">
-        <div className="dd-section-heading"><span>02 <b>//</b></span> WHAT IT EXAMINES</div>
+        <CaseStudySectionLabel index="02" title="WHAT IT EXAMINES" />
         <Reveal className="dd-heading-row"><h2>Four layers. <em>One clearer picture.</em></h2><p>Each section focuses on a different part of a domain's behavior. Together they offer a more useful starting point for investigation than a single pass/fail score.</p></Reveal>
         <div className="dd-diagnostic-grid">
           {diagnostics.map(d => <Reveal key={d.id} className="dd-diagnostic-card">
@@ -91,7 +87,7 @@ export default function DomainDoctorCaseStudy() {
       </section>
 
       <section id="dd-system" className="dd-story-section">
-        <div className="dd-section-heading"><span>03 <b>//</b></span> UNDER THE HOOD</div>
+        <CaseStudySectionLabel index="03" title="UNDER THE HOOD" />
         <Reveal className="dd-heading-row"><h2>Built as a service, <em>not just a script.</em></h2><p>The project connects user-facing design with backend diagnostics and the infrastructure required to host an application reliably.</p></Reveal>
         <div className="dd-architecture">
           <div className="dd-architecture-label"><Layers size={18} aria-hidden="true" /> SYSTEM COMPONENTS <span>CONCEPTUAL · NOT A REQUEST FLOW</span></div>
@@ -109,7 +105,7 @@ export default function DomainDoctorCaseStudy() {
       </section>
 
       <section id="dd-engineering" className="dd-story-section dd-lessons">
-        <div className="dd-section-heading"><span>04 <b>//</b></span> ENGINEERING & LESSONS</div>
+        <CaseStudySectionLabel index="04" title="ENGINEERING & LESSONS" />
         <Reveal className="dd-story-split">
           <h2>Making the results useful is part of <em>the engineering.</em></h2>
           <div className="dd-prose">

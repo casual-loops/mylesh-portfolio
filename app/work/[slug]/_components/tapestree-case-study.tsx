@@ -1,6 +1,7 @@
+import { CaseStudyBackLink, CaseStudyNavigation, CaseStudySectionLabel } from './case-study-layout';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, ArrowUpRight, GitBranch, ShieldCheck, Database, Cloud, FlaskConical } from 'lucide-react';
+import { ArrowUpRight, GitBranch, ShieldCheck, Database, Cloud, FlaskConical } from 'lucide-react';
 import { Reveal } from '@/components/reveal';
 
 const lifecycle = [
@@ -29,7 +30,7 @@ export default function TapestreeCaseStudy() {
   return (
     <article className="shell tp-case">
       <header className="tp-hero">
-        <Link href="/work" className="dd-back"><ArrowLeft size={16} aria-hidden="true" /> All work</Link>
+        <CaseStudyBackLink />
         <p className="eyebrow">02 <span className="eyebrow-divider">//</span> SELECTED WORK <span className="dd-hero-slash">//</span> CASE STUDY 02</p>
         <div className="tp-hero-grid">
           <div>
@@ -56,15 +57,10 @@ export default function TapestreeCaseStudy() {
         </div>
       </header>
 
-      <nav className="dd-section-nav tp-section-nav" aria-label="Tapestree case study sections">
-        <a href="#tp-problem"><span>01 //</span> The problem</a>
-        <a href="#tp-workflow"><span>02 //</span> Product & workflow</a>
-        <a href="#tp-architecture"><span>03 //</span> Architecture</a>
-        <a href="#tp-lessons"><span>04 //</span> Engineering lessons</a>
-      </nav>
+      <CaseStudyNavigation className="tp-section-nav" sections={[{"id":"tp-problem","label":"The problem"},{"id":"tp-workflow","label":"Product & workflow"},{"id":"tp-architecture","label":"Architecture"},{"id":"tp-lessons","label":"Engineering lessons"}]} />
 
       <section id="tp-problem" className="dd-story-section">
-        <div className="dd-section-heading"><span>01 <b>//</b></span> THE PROBLEM</div>
+        <CaseStudySectionLabel index="01" title="THE PROBLEM" />
         <Reveal className="dd-story-split">
           <h2>Important changes shouldn't depend on <em>someone's memory.</em></h2>
           <div className="dd-prose">
@@ -76,7 +72,7 @@ export default function TapestreeCaseStudy() {
       </section>
 
       <section id="tp-workflow" className="dd-story-section">
-        <div className="dd-section-heading"><span>02 <b>//</b></span> PRODUCT & WORKFLOW</div>
+        <CaseStudySectionLabel index="02" title="PRODUCT & WORKFLOW" />
         <Reveal className="dd-heading-row"><h2>A change is more than <em>an approval.</em></h2><p>From preparation through validation, the lifecycle needs to preserve useful context for the people doing the work and the people who inherit it later.</p></Reveal>
         <p className="tp-lifecycle-note">WORKFLOW OVERVIEW // PLAN THROUGH COMPLETION</p>
         <div className="tp-lifecycle-grid">
@@ -93,7 +89,7 @@ export default function TapestreeCaseStudy() {
       </section>
 
       <section id="tp-architecture" className="dd-story-section">
-        <div className="dd-section-heading"><span>03 <b>//</b></span> ENGINEERING THE PLATFORM</div>
+        <CaseStudySectionLabel index="03" title="ENGINEERING THE PLATFORM" />
         <Reveal className="dd-heading-row"><h2>Multi-tenancy changes <em>the design decisions.</em></h2><p>Building a product for multiple organizations makes authorization, data isolation, reproducibility, and deployment boundaries first-class engineering concerns.</p></Reveal>
         <div className="tp-stack-grid">
           {stack.map(s => <Reveal key={s.label} className="tp-stack-item">
@@ -109,7 +105,7 @@ export default function TapestreeCaseStudy() {
       </section>
 
       <section id="tp-lessons" className="dd-story-section">
-        <div className="dd-section-heading"><span>04 <b>//</b></span> ENGINEERING & LESSONS</div>
+        <CaseStudySectionLabel index="04" title="ENGINEERING & LESSONS" />
         <Reveal className="dd-story-split">
           <h2>Good governance should make work <em>easier to do well.</em></h2>
           <div className="dd-prose">

@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
 /** Conceptual technical diagrams, not application screenshots or live telemetry. */
-export function ProjectVisual({ slug }: { slug: string }) {
-  const groups: Record<string, ReactNode> = {
+// Static JSX is created once at module evaluation rather than for every card render.
+const diagrams: Record<string, ReactNode> = {
     'domain-doctor': (
       <svg viewBox="0 0 460 240" className="project-diagram diagram-domain" aria-hidden="true">
         <defs><linearGradient id="dd-beam" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#76A9C6" stopOpacity=".45"/><stop offset="1" stopColor="#76A9C6" stopOpacity=".02"/></linearGradient></defs>
@@ -84,6 +84,8 @@ export function ProjectVisual({ slug }: { slug: string }) {
         <circle cx="407" cy="177" r="3" fill="#D6A34F"/>
       </svg>
     ),
-  };
-  return <div className="project-visual" aria-hidden="true">{groups[slug] ?? null}</div>;
+};
+
+export function ProjectVisual({ slug }: { slug: string }) {
+  return <div className="project-visual" aria-hidden="true">{diagrams[slug] ?? null}</div>;
 }
