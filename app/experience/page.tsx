@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import { ExperienceIntro } from './_components/experience-intro';
 import { ExperienceSectionNav } from './_components/section-nav';
 import { ProfessionalHistory } from './_components/professional-history';
@@ -7,7 +8,11 @@ import { Certifications } from './_components/certifications';
 import { CurrentFocus } from './_components/current-focus';
 import { ResumeCTA } from './_components/resume-cta';
 
-export const metadata = { title: 'Experience' };
+export const metadata = pageMetadata({
+  title: 'Experience',
+  description: 'Explore Myles Hobdy\'s professional experience, systems administration background, technical skills, certifications, and current engineering focus.',
+  path: '/experience',
+});
 
 export default function Experience() {
   return (
