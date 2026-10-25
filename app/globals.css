@@ -452,3 +452,63 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
  .hero h1{font-size:clamp(38px,8.1vw,52px);line-height:1.12;}
  .hero-lead{font-size:17px;}
 }
+
+/* Selected Work v2: each project has its own technical visual language. */
+.project-grid{align-items:stretch;gap:clamp(16px,1.55vw,28px);}
+.project-grid>div{min-width:0;height:100%;}
+.project-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  background:#0b0b0d;
+  border:1px solid rgba(171,180,194,.2);
+  overflow:hidden;
+}
+.project-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-top:2px solid transparent;
+  pointer-events:none;
+  transition:border-color .3s ease;
+}
+.project-card:hover::after,.project-card:focus-visible::after{border-top-color:var(--project-accent,var(--accent-sage));}
+.art-domain-doctor{--project-accent:#76A9C6;}
+.art-tapestree{--project-accent:#D56668;}
+.art-infrastructure-lab{--project-accent:#D6A34F;}
+.project-art{
+  height:clamp(196px,17vw,270px);
+  background:#101114;
+  border-bottom:1px solid var(--line);
+  isolation:isolate;
+}
+.project-art:before{content:none;}
+.art-domain-doctor{background:radial-gradient(ellipse at 35% 47%,rgba(118,169,198,.095),transparent 58%),#101114;}
+.art-tapestree{background:radial-gradient(ellipse at 54% 50%,rgba(213,102,104,.065),transparent 62%),#101114;}
+.art-infrastructure-lab{background:radial-gradient(ellipse at 50% 48%,rgba(214,163,79,.055),transparent 62%),#101114;}
+.project-visual{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;pointer-events:none;}
+.project-diagram{height:100%;width:100%;max-width:530px;transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .65s ease;}
+.project-card:hover .project-diagram{transform:scale(1.045);filter:brightness(1.15);}
+.project-number{color:#AEBCC7;z-index:2;font-family:monospace;}
+.project-status{z-index:2;padding:6px 10px;border-color:rgba(171,180,194,.25);font-size:10px;letter-spacing:.08em;color:#C7D0D8;background:rgba(7,8,10,.86);}
+.project-card-body{flex:1;display:flex;flex-direction:column;gap:0;padding:clamp(20px,1.5vw,28px);}
+.project-name-row{gap:15px;}
+.project-name-row h3{font-size:clamp(21px,1.5vw,28px);letter-spacing:-.035em;font-weight:400;}
+.project-open{width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(171,180,194,.25);border-radius:2px;flex-shrink:0;transition:background .25s ease,border-color .25s ease;}
+.project-card:hover .project-open,.project-card:focus-visible .project-open{background:rgba(118,169,198,.07);border-color:rgba(118,169,198,.6);}
+.project-summary{margin:15px 0 20px;min-height:0!important;line-height:1.6;font-size:15px;}
+.project-card-meta{margin-top:auto;border-top:1px solid rgba(171,180,194,.15);padding-top:16px;}
+.project-areas{display:block;color:#94A9B9;font-family:monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;}
+.project-areas::first-letter{color:var(--accent-ochre);}
+.project-card-meta .tech-logos{margin-top:14px;gap:12px;min-height:28px;}
+.project-card-meta .tech-logo{width:28px;height:28px;}
+.project-card-meta .tech-logo-image{width:23px;height:23px;}
+@media(max-width:700px){
+ .project-art{height:220px;}
+ .project-card-body{padding:20px;}
+}
+@media(prefers-reduced-motion:reduce){
+ .project-diagram,.project-open{transition:none!important;}
+ .project-card:hover .project-diagram{transform:none!important;}
+}
