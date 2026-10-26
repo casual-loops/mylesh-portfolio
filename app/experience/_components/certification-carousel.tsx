@@ -10,7 +10,7 @@ const credentials = [
   { title: 'ITIL 4 Foundation', short: 'ITIL 4', issuer: 'PeopleCert', color: 'ochre', badge: '/images/itil.png' },
   { title: 'Certified Knowledge Manager', short: 'CKM', issuer: 'KM Institute', color: 'blue', badge: '/images/ckm.png' },
   { title: 'Certified Scrum Master', short: 'CSM', issuer: 'Scrum Alliance', color: 'red', badge: '/images/sa-csm-600.png' },
-  { title: 'Six Sigma Green Belt', short: 'SSGB', issuer: 'GLSS', color: 'ochre', badge: '/images/SSO-Green-Belt-Badge.webp' },
+  { title: 'Six Sigma Green Belt', short: 'SSGB', issuer: 'GLSS', color: 'ochre', badge: '/images/LSSGB-Badge-00-GB-Certification-v2.webp' },
 ];
 
 const SCROLL_SPEED = 44; // pixels per second; continuous rather than timed card jumps
