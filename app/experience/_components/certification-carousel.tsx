@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
@@ -10,12 +10,46 @@ const credentials = [
   { title: 'ITIL 4 Foundation', short: 'ITIL 4', issuer: 'PeopleCert', color: 'ochre', badge: '/images/itil.png' },
   { title: 'Certified Knowledge Manager', short: 'CKM', issuer: 'KM Institute', color: 'blue', badge: '/images/ckm.png' },
   { title: 'Certified Scrum Master', short: 'CSM', issuer: 'Scrum Alliance', color: 'red', badge: '/images/sa-csm-600.png' },
-  { title: 'Six Sigma Green Belt', short: 'SSGB', issuer: 'Process improvement', color: 'ochre', badge: '/images/SSO-Green-Belt-Badge.webp' },
+  { title: 'Six Sigma Green Belt', short: 'SSGB', issuer: 'GLSS', color: 'ochre', badge: '/images/SSO-Green-Belt-Badge.webp' },
 ];
 
 export function CertificationCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track || paused) return;
+
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (motionPreference.matches) return;
+
+    const timer = window.setInterval(() => {
+      if (document.hidden || motionPreference.matches) return;
+      const card = track.querySelector<HTMLElement>('.credential-card');
+      if (!card) return;
+
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      const step = card.getBoundingClientRect().width + gap;
+      const maximum = track.scrollWidth - track.clientWidth;
+      if (maximum <= 1) return;
+
+      if (track.scrollLeft + step >= maximum - 2) {
+        // Show the last card, then wrap to the beginning.
+        track.scrollTo({ left: maximum, behavior: 'smooth' });
+        window.setTimeout(() => {
+          if (!document.hidden && !motionPreference.matches && !track.matches(':hover') && !track.contains(document.activeElement)) {
+            track.scrollTo({ left: 0, behavior: 'instant' });
+          }
+        }, 750);
+      } else {
+        track.scrollBy({ left: step, behavior: 'smooth' });
+      }
+    }, 4500);
+
+    return () => window.clearInterval(timer);
+  }, [paused]);
 
   function move(direction: -1 | 1) {
     const track = trackRef.current;
@@ -42,7 +76,7 @@ export function CertificationCarousel() {
           <button type="button" onClick={() => move(1)} aria-label="Scroll certifications right"><ArrowRight size={19} /></button>
         </div>
       </div>
-      <div className="credential-track" ref={trackRef} onScroll={updatePosition} tabIndex={0} role="region" aria-label="Certifications, scroll horizontally to browse">
+      <div className="credential-track" ref={trackRef} onScroll={updatePosition} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocus={() => setPaused(true)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false); }} onTouchStart={() => setPaused(true)} tabIndex={0} role="region" aria-label="Certifications, scroll horizontally to browse">
         {credentials.map((credential, index) => (
           <article key={credential.short} className={`credential-card credential-${credential.color}`}>
             <div className="credential-card-top"><span>{String(index + 1).padStart(2, '0')} //</span><span className="credential-code">{credential.short}</span></div>
