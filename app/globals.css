@@ -1500,3 +1500,25 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
 }
 .credential-track-flow::-webkit-scrollbar { display: none; }
 .credential-track-flow .credential-card { scroll-snap-align: none; }
+
+/* Certifications: animate the inner strip rather than native scrollLeft.
+   Native scroll snapping and scripted fractional scrolling interfered with motion. */
+.credential-track-marquee {
+  display: block;
+  overflow: hidden;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+  scrollbar-width: none;
+  padding: 0 0 15px;
+}
+.credential-track-marquee::-webkit-scrollbar { display: none; }
+.credential-marquee-strip {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  will-change: transform;
+}
+.credential-marquee-strip .credential-card { scroll-snap-align: none; }
+@media (prefers-reduced-motion: reduce) {
+  .credential-marquee-strip { will-change: auto; }
+}
