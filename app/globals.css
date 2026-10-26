@@ -1522,3 +1522,6 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
 @media (prefers-reduced-motion: reduce) {
   .credential-marquee-strip { will-change: auto; }
 }
+
+/* The two half-width highlights form one uninterrupted, wrapping progress segment. */
+.credential-progress-loop span { transition: none; }
