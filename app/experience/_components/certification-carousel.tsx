@@ -72,8 +72,8 @@ export function CertificationCarousel() {
       <div className="credential-carousel-controls">
         <p>Professional credentials <span>//</span> {String(credentials.length).padStart(2, '0')}</p>
         <div className="credential-arrows">
-          <button type="button" onClick={() => { setPaused(true); move(-1); }} aria-label="Scroll certifications left"><ArrowLeft size={19} /></button>
-          <button type="button" onClick={() => { setPaused(true); move(1); }} aria-label="Scroll certifications right"><ArrowRight size={19} /></button>
+          <button type="button" onClick={() => move(-1)} aria-label="Scroll certifications left"><ArrowLeft size={19} /></button>
+          <button type="button" onClick={() => move(1)} aria-label="Scroll certifications right"><ArrowRight size={19} /></button>
         </div>
       </div>
       <div className="credential-track" ref={trackRef} onScroll={updatePosition} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocus={() => setPaused(true)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false); }} onTouchStart={() => setPaused(true)} tabIndex={0} role="region" aria-label="Certifications, scroll horizontally to browse">
