@@ -18,6 +18,8 @@ const SPEED = 85; // pixels per second, continuously
 export function CertificationCarousel() {
   const stripRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLSpanElement>(null);
+  const progressWrapRef = useRef<HTMLSpanElement>(null);
+  const progressTrackRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
   const [focused, setFocused] = useState(false);
   const [touching, setTouching] = useState(false);
@@ -50,9 +52,10 @@ export function CertificationCarousel() {
       // Normalize only the hidden, identical copy of the cards.
       offsetRef.current = ((offsetRef.current % cycle) + cycle) % cycle;
       strip.style.transform = `translate3d(${-offsetRef.current}px, 0, 0)`;
-      if (progressRef.current) {
-        progressRef.current.style.transform = `translateX(${(offsetRef.current / cycle) * 100}%)`;
-      }
+      const railWidth = progressTrackRef.current?.clientWidth ?? 0;
+      const distance = (offsetRef.current / cycle) * railWidth;
+      if (progressRef.current) progressRef.current.style.transform = `translate3d(${distance}px, 0, 0)`;
+      if (progressWrapRef.current) progressWrapRef.current.style.transform = `translate3d(${distance - railWidth}px, 0, 0)`;
     }
 
     function tick(now: number) {
@@ -112,7 +115,7 @@ export function CertificationCarousel() {
             >
               <div className="credential-card-top"><span>{String(index + 1).padStart(2, '0')} //</span><span className="credential-code">{credential.short}</span></div>
               <div className="credential-card-body">
-                <div className="credential-badge-wrap"><Image src={credential.badge} alt={`${credential.title} certification badge`} width={128} height={128} className="credential-badge" /></div>
+                <div className="credential-badge-wrap"><Image src={credential.badge} alt={`${credential.title} certification badge`} width={128} height={128} style={{ width: 'auto', height: 'auto' }} className="credential-badge" /></div>
                 <h3>{credential.title}</h3>
               </div>
               <div className="credential-issuer">{credential.issuer}</div>
@@ -120,7 +123,7 @@ export function CertificationCarousel() {
           )))}
         </div>
       </div>
-      <div className="credential-progress" aria-hidden="true"><span ref={progressRef} /></div>
+      <div className="credential-progress credential-progress-loop" ref={progressTrackRef} aria-hidden="true"><span ref={progressRef} /><span ref={progressWrapRef} /></div>
     </div>
   );
 }
