@@ -1,5 +1,7 @@
 /* GitHub contribution calendar — self-contained Experience page section. */
-.github-activity { padding: 35px 0 80px; }
+.github-activity { padding: clamp(58px, 7vw, 112px) 0 0; }
+/* Use the standard section gap only once between GitHub activity and Skills. */
+.experience-page .github-activity + .experience-skills { margin-top: clamp(58px, 7vw, 112px); }
 .github-activity-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 45px; margin: 40px 0 28px; }
 .github-activity-kicker { display: inline-flex; align-items: center; gap: 11px; color: #d6a34f; font-size: 12px; letter-spacing: .2em; }
 .github-activity-intro h3 { font-size: clamp(30px, 3.6vw, 50px); font-weight: 400; letter-spacing: -.045em; line-height: 1.15; margin: 19px 0 0; }
@@ -31,4 +33,33 @@
   .github-activity-summary { flex-direction: column; }
   .github-activity-label { display: none; }
   .github-activity-day { width: 12px; height: 12px; flex-basis: 12px; }
+}
+
+/* The Experience page has six anchors. Older five-link grid rules in globals.css
+   must not force the sixth link onto a second row on wide screens. */
+.experience-page .experience-section-nav {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+.experience-page .experience-section-nav a {
+  min-width: 0;
+  padding: 15px 12px;
+  border-right: 1px solid var(--line);
+  border-bottom: 0;
+  grid-column: auto;
+}
+.experience-page .experience-section-nav a:first-child { padding-left: 12px; }
+.experience-page .experience-section-nav a:last-child { border-right: 0; }
+
+@media (max-width: 1199px) {
+  .experience-page .experience-section-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .experience-page .experience-section-nav a:nth-child(3n) { border-right: 0; }
+  .experience-page .experience-section-nav a:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 700px) {
+  .experience-page .experience-section-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .experience-page .experience-section-nav a:nth-child(3n) { border-right: 1px solid var(--line); }
+  .experience-page .experience-section-nav a:nth-child(2n) { border-right: 0; }
+  .experience-page .experience-section-nav a:nth-child(-n+4) { border-bottom: 1px solid var(--line); }
+  .experience-page .experience-section-nav a:nth-child(5) { grid-column: auto; border-right: 1px solid var(--line); }
+  .experience-page .experience-section-nav a:nth-child(6) { grid-column: auto; border-right: 0; }
 }
