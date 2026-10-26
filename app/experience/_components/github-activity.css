@@ -1,0 +1,34 @@
+/* GitHub contribution calendar — self-contained Experience page section. */
+.github-activity { padding: 35px 0 80px; }
+.github-activity-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 45px; margin: 40px 0 28px; }
+.github-activity-kicker { display: inline-flex; align-items: center; gap: 11px; color: #d6a34f; font-size: 12px; letter-spacing: .2em; }
+.github-activity-intro h3 { font-size: clamp(30px, 3.6vw, 50px); font-weight: 400; letter-spacing: -.045em; line-height: 1.15; margin: 19px 0 0; }
+.github-activity-intro p { margin: 0; max-width: 590px; color: #a7b8c7; font-size: 16px; line-height: 1.75; }
+.github-activity-panel { border: 1px solid rgba(160, 191, 214, .24); background: radial-gradient(circle at 94% 5%, rgba(70, 122, 158, .12), transparent 40%), #0b1118; padding: clamp(22px, 3.1vw, 44px); }
+.github-activity-summary { display: flex; align-items: start; justify-content: space-between; gap: 15px; margin-bottom: 29px; }
+.github-activity-summary > div { display: flex; align-items: baseline; flex-wrap: wrap; gap: 14px; }
+.github-activity-summary strong { font-size: clamp(31px, 3vw, 43px); font-weight: 400; line-height: 1; color: #e7eef4; letter-spacing: -.035em; }
+.github-activity-summary span:not(.github-activity-label) { color: #b4c5d2; font-size: 14px; }
+.github-activity-label { font-size: 11px; letter-spacing: .16em; color: #8299aa; }
+.github-activity-scroll { overflow-x: auto; padding: 5px 0 15px; scrollbar-width: thin; scrollbar-color: #54728a transparent; }
+.github-activity-calendar { display: flex; gap: 5px; width: max-content; }
+.github-activity-week { display: flex; flex-direction: column; gap: 5px; }
+.github-activity-day { display: block; width: 13px; height: 13px; flex: 0 0 13px; border-radius: 2px; }
+.github-activity-level-0 { background: #19242f; box-shadow: inset 0 0 0 1px rgba(151, 181, 201, .1); }
+.github-activity-level-1 { background: #29485d; }
+.github-activity-level-2 { background: #3f6b89; }
+.github-activity-level-3 { background: #6497b5; }
+.github-activity-level-4 { background: #a9d0e7; }
+.github-activity-legend { display: flex; align-items: center; justify-content: flex-end; gap: 5px; margin: 3px 0 28px; }
+.github-activity-legend span { color: #8fa6b6; font-size: 10px; letter-spacing: .12em; margin: 0 5px; }
+.github-activity-link { display: inline-flex; align-items: center; gap: 8px; color: #a8cfe8; font-size: 15px; border-bottom: 1px solid rgba(168, 207, 232, .4); padding-bottom: 5px; }
+.github-activity-link:hover { color: #edf6fc; }
+.github-activity-unavailable { display: flex; align-items: flex-start; gap: 20px; color: #9abed6; margin: 10px 0 32px; }
+.github-activity-unavailable strong { display: block; color: #e4edf3; font-size: 19px; font-weight: 500; margin-bottom: 6px; }
+.github-activity-unavailable p { margin: 0; max-width: 640px; color: #a4b7c5; line-height: 1.65; }
+@media (max-width: 760px) {
+  .github-activity-intro { grid-template-columns: 1fr; gap: 18px; }
+  .github-activity-summary { flex-direction: column; }
+  .github-activity-label { display: none; }
+  .github-activity-day { width: 12px; height: 12px; flex-basis: 12px; }
+}
