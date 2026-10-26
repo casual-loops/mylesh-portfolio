@@ -85,6 +85,20 @@ npm run start
 | `public/images/` | Portfolio illustrations and project screenshots |
 | `public/Myles-Hobdy-Resume.pdf` | Downloadable résumé |
 
+## GitHub contribution calendar
+
+The Experience page includes a server-rendered GitHub contribution heatmap for the `casual-loops` profile. GitHub's GraphQL API requires authentication to retrieve the contribution calendar.
+
+To enable the calendar locally, add the following to `.env.local`:
+
+```dotenv
+GITHUB_ACTIVITY_TOKEN=your_github_token_here
+```
+
+For production, add `GITHUB_ACTIVITY_TOKEN` to **Vercel → Project Settings → Environment Variables** for the Production environment, then redeploy. Use a token with only the minimum permissions required for reading your own contribution activity; never commit or expose a token in public code.
+
+Contribution data is fetched on the server and cached for six hours. The site falls back to a GitHub profile link if the token is missing, invalid, or the GitHub API is unavailable. Private contributions may appear as aggregate counts depending on GitHub account visibility settings; private repository details are not displayed.
+
 ## Deployment
 
 The production site is hosted on Vercel at **[mylesh.dev](https://mylesh.dev)**. Changes merged into `main` are deployed through the connected GitHub integration.
