@@ -39,6 +39,28 @@ const diagrams: Record<string, ReactNode> = {
         <text x="52" y="55" fill="#AAB5C1" fontFamily="monospace" fontSize="9" letterSpacing="1">CHANGE LIFECYCLE</text>
       </svg>
     ),
+    queueforge: (
+      <svg viewBox="0 0 460 240" className="project-diagram diagram-queueforge" aria-hidden="true">
+        <g fill="none" stroke="#91A9B9" strokeOpacity=".55" strokeWidth="1.3">
+          <path d="M125 115H179 M271 115H332 M225 149V178" />
+          <path d="M174 111L180 115L174 119 M327 111L333 115L327 119 M221 173L225 179L229 173" />
+        </g>
+        <g fill="#141F29" stroke="#76A9C6" strokeOpacity=".8">
+          <rect x="30" y="85" width="96" height="60" rx="4"/>
+          <rect x="179" y="75" width="92" height="74" rx="4"/>
+          <rect x="333" y="85" width="96" height="60" rx="4"/>
+          <rect x="179" y="179" width="92" height="38" rx="4"/>
+        </g>
+        <g fontFamily="monospace" fill="#C7D6E0" fontSize="11" textAnchor="middle">
+          <text x="78" y="110">API</text><text x="78" y="125">CLIENT</text>
+          <text x="225" y="105">JOB</text><text x="225" y="121">SERVICE</text>
+          <text x="381" y="110">POSTGRES</text><text x="381" y="125">STATE</text>
+          <text x="225" y="202">WORKERS</text>
+        </g>
+        <g fill="#76A9C6"><circle cx="225" cy="149" r="3"/><circle cx="271" cy="115" r="3"/></g>
+        <g fontFamily="monospace" fill="#9CB0BF" fontSize="9" letterSpacing="1.1"><text x="30" y="44">QUEUEFORGE // CONCEPTUAL</text><text x="30" y="57">CONCURRENCY · RELIABILITY</text></g>
+      </svg>
+    ),
     'infrastructure-lab': (
       <svg viewBox="0 0 460 240" className="project-diagram diagram-infra" aria-hidden="true">
         <defs>
