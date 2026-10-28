@@ -5,7 +5,7 @@ import { WorkIntro } from './_components/work-intro';
 
 export const metadata = pageMetadata({
   title: 'Work',
-  description: 'Explore engineering projects by Myles Hobdy, including Domain Doctor, Tapestree, and an infrastructure lab spanning software, systems, and cloud.',
+  description: 'Explore engineering projects by Myles Hobdy, including Domain Doctor, Tapestree, QueueForge, and an infrastructure lab spanning software, systems, and cloud.',
   path: '/work',
 });
 
