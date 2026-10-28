@@ -1560,3 +1560,56 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
 .art-the-observatory {
   background:radial-gradient(circle at 50% 55%,rgba(70,137,181,.21),transparent 56%),linear-gradient(135deg,#111B28,#080E16);
 }
+
+/* Observatory case-study screenshots and technical project-card visual. */
+.project-card-the-observatory { --project-accent:#76A9C6; }
+.project-card-the-observatory .diagram-observatory {
+  width:100%;
+  height:100%;
+  display:block;
+}
+.portfolio-showcase {
+  margin:36px 0 44px;
+  display:grid;
+  grid-template-columns:minmax(220px,.65fr) minmax(0,1.35fr);
+  align-items:center;
+  gap:clamp(22px,4vw,58px);
+  border:1px solid var(--line);
+  background:rgba(16,26,37,.55);
+  padding:clamp(18px,2.4vw,34px);
+}
+.portfolio-showcase-copy span,.portfolio-screenshot figcaption {
+  color:#D6A34F;
+  font:11px monospace;
+  letter-spacing:.09em;
+}
+.portfolio-showcase-copy h3 {
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(24px,2.5vw,36px);
+  line-height:1.15;
+  margin:18px 0;
+}
+.portfolio-showcase-copy p {
+  color:#B1BFCA;
+  line-height:1.7;
+  margin:0;
+}
+.portfolio-screenshot { margin:0; min-width:0; }
+.portfolio-screenshot img {
+  display:block;
+  width:100%;
+  height:auto;
+  border:1px solid rgba(171,180,194,.3);
+}
+.portfolio-screenshot figcaption {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:8px;
+  padding-top:13px;
+  color:#A9BAC7;
+}
+@media(max-width:850px) {
+  .portfolio-showcase { grid-template-columns:1fr; }
+}
