@@ -61,6 +61,35 @@ const diagrams: Record<string, ReactNode> = {
         <g fontFamily="monospace" fill="#9CB0BF" fontSize="9" letterSpacing="1.1"><text x="30" y="44">QUEUEFORGE // CONCEPTUAL</text><text x="30" y="57">CONCURRENCY · RELIABILITY</text></g>
       </svg>
     ),
+    'the-observatory': (
+      <svg viewBox="0 0 460 240" className="project-diagram diagram-observatory" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="obs-window" x1="0" y1="0" x2="1" y2="1">
+            <stop stopColor="#172639"/><stop offset="1" stopColor="#0B131F"/>
+          </linearGradient>
+        </defs>
+        <text x="42" y="33" fill="#AAB9C8" fontFamily="monospace" fontSize="10" letterSpacing="1.5">THE OBSERVATORY // WEB EXPERIENCE</text>
+        <rect x="62" y="54" width="336" height="154" rx="6" fill="#0B1119" stroke="#718FA5" strokeWidth="1.3"/>
+        <rect x="62" y="54" width="336" height="23" rx="6" fill="#1A2633" stroke="#718FA5" strokeWidth="1"/>
+        <path d="M62 77H398" stroke="#718FA5" strokeOpacity=".7"/>
+        <g fill="#D6A34F"><circle cx="78" cy="65" r="2.6"/></g>
+        <g fill="#7C97A9"><circle cx="89" cy="65" r="2.6"/><circle cx="100" cy="65" r="2.6"/></g>
+        <path d="M122 65H190" stroke="#91AABD" strokeOpacity=".4"/>
+        <g stroke="#8FABC0" strokeOpacity=".4"><path d="M304 65H326 M337 65H355 M365 65H380"/></g>
+        <path d="M86 104H163 M86 111H145" stroke="#E0B15B" strokeOpacity=".9"/>
+        <path d="M86 134H202 M86 145H193 M86 156H174" stroke="#AAC4D7" strokeOpacity=".75" strokeWidth="2.5"/>
+        <path d="M86 178H151" stroke="#76A9C6" strokeOpacity=".65" strokeWidth="2.5"/>
+        <circle cx="292" cy="139" r="49" fill="url(#obs-window)" stroke="#76A9C6" strokeOpacity=".75"/>
+        <ellipse cx="292" cy="139" rx="58" ry="21" transform="rotate(-25 292 139)" fill="none" stroke="#D6A34F" strokeOpacity=".9"/>
+        <circle cx="292" cy="139" r="4" fill="#D6A34F"/>
+        <circle cx="338" cy="109" r="5" fill="#76A9C6"/>
+        <g fill="none" stroke="#7792A5" strokeOpacity=".55"><path d="M398 112H426 M398 176H426"/></g>
+        <g fill="#A9BAC7" fontFamily="monospace" fontSize="8"><text x="402" y="106">UI</text><text x="402" y="169">DATA</text></g>
+        <path d="M197 208H263" stroke="#7190A4" strokeWidth="2"/>
+        <path d="M230 208V224" stroke="#7190A4" strokeWidth="2"/>
+        <path d="M192 224H268" stroke="#7190A4" strokeWidth="2"/>
+      </svg>
+    ),
     'infrastructure-lab': (
       <svg viewBox="0 0 460 240" className="project-diagram diagram-infra" aria-hidden="true">
         <defs>

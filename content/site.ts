@@ -43,6 +43,16 @@ export const projects: Project[] = [
     repo:'https://github.com/casual-loops/bdse-course'
   },
   {
+    slug:'the-observatory', name:'The Observatory', tagline:'The project behind this portfolio.',
+    summary:'A responsive engineering portfolio built to connect project stories, technical decisions, and professional experience.',
+    status:'Deployed', areas:['Software'], technologies:['Next.js','TypeScript'],
+    idea:'A portfolio should show not only what was built, but also why it was built and which decisions shaped it.',
+    approach:'Build a content-driven Next.js site with reusable case studies, responsive layouts, and a shared registry that powers project discovery.',
+    evidence:['Live Next.js portfolio with project case studies and responsive layouts','Shared project registry powering routes, featured work, and the sitemap','Custom technical diagrams, accessible navigation, and route metadata'],
+    next:'Continue refining case studies, design consistency, accessibility, and engineering evidence.',
+    live:'https://mylesh.dev', repo:'https://github.com/casual-loops/mylesh-portfolio'
+  },
+  {
     slug:'infrastructure-lab', name:'Infrastructure Lab', tagline:'A place to experiment.',
     summary:'My home environment for virtualization, containerization, networking, and hands-on systems exploration.',
     status:'Ongoing', areas:['Systems','Networking'], technologies:['Proxmox','Linux','Docker','Networking'],
