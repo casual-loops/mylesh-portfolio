@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUpRight, Code2, Layers3, Smartphone, SearchCheck } from 'lucide-react';
 import { Reveal } from '@/components/reveal';
 import { CaseStudyBackLink, CaseStudyNavigation, CaseStudySectionLabel } from './case-study-layout';
@@ -70,6 +71,13 @@ export default function PortfolioCaseStudy() {
       <section id="portfolio-experience" className="dd-story-section">
         <CaseStudySectionLabel index="02" title="THE EXPERIENCE" />
         <Reveal className="dd-heading-row"><h2>Editorial storytelling. <em>Engineering structure.</em></h2><p>The visual direction uses a dark observatory-inspired canvas, restrained orbital graphics, technical diagrams, and readable project narratives rather than a generic project grid.</p></Reveal>
+        <Reveal className="portfolio-showcase">
+          <div className="portfolio-showcase-copy"><span>LIVE SITE // HOMEPAGE</span><h3>A distinct entry point.</h3><p>The homepage introduces my engineering interests and routes visitors toward work, background, and experience.</p></div>
+          <figure className="portfolio-screenshot">
+            <Image src="/images/portfolio-home.png" alt="The Observatory portfolio homepage showing an orbital portrait and introduction" width={1600} height={900} sizes="(max-width: 900px) 100vw, 65vw" />
+            <figcaption>ACTUAL WEBSITE <span>MYLESH.DEV</span></figcaption>
+          </figure>
+        </Reveal>
         <div className="lab-operations-grid">
           {decisions.map(({icon:Icon,title,detail})=><Reveal key={title}><Icon size={22} aria-hidden="true"/><h3>{title}</h3><p>{detail}</p></Reveal>)}
         </div>
@@ -78,6 +86,13 @@ export default function PortfolioCaseStudy() {
       <section id="portfolio-architecture" className="dd-story-section">
         <CaseStudySectionLabel index="03" title="HOW IT IS BUILT"/>
         <Reveal className="dd-heading-row"><h2>One source of truth. <em>Many views.</em></h2><p>The portfolio uses a small content model to connect pages and keep project discovery consistent as the work grows.</p></Reveal>
+        <Reveal className="portfolio-showcase">
+          <div className="portfolio-showcase-copy"><span>LIVE SITE // PROJECT ARCHIVE</span><h3>Stories with a shared structure.</h3><p>Project cards use the same registry and presentation patterns while each case study can explain its own technical decisions and evidence.</p></div>
+          <figure className="portfolio-screenshot">
+            <Image src="/images/portfolio-work.png" alt="The Observatory work gallery displaying engineering project cards and category filters" width={1600} height={900} sizes="(max-width: 900px) 100vw, 65vw" />
+            <figcaption>ACTUAL PROJECT ARCHIVE <span>MYLESH.DEV/WORK</span></figcaption>
+          </figure>
+        </Reveal>
         <div className="lab-domain-grid">
           {layers.map(item=><Reveal key={item.number} className="lab-domain-card"><span>{item.number} // SYSTEM LAYER</span><h3>{item.title}</h3><p>{item.detail}</p><small>{item.terms}</small></Reveal>)}
         </div>
