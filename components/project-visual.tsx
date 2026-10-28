@@ -61,6 +61,29 @@ const diagrams: Record<string, ReactNode> = {
         <g fontFamily="monospace" fill="#9CB0BF" fontSize="9" letterSpacing="1.1"><text x="30" y="44">QUEUEFORGE // CONCEPTUAL</text><text x="30" y="57">CONCURRENCY · RELIABILITY</text></g>
       </svg>
     ),
+    'the-observatory': (
+      <svg viewBox="0 0 460 240" className="project-diagram diagram-observatory" aria-hidden="true">
+        <g fill="none" stroke="#76A9C6" strokeOpacity=".34">
+          <circle cx="230" cy="122" r="78"/>
+          <circle cx="230" cy="122" r="55"/>
+          <ellipse cx="230" cy="122" rx="105" ry="34" transform="rotate(-26 230 122)"/>
+          <path d="M230 24V220 M126 122H334" strokeDasharray="3 6"/>
+        </g>
+        <circle cx="230" cy="122" r="31" fill="#142434" stroke="#76A9C6" strokeOpacity=".75"/>
+        <circle cx="230" cy="122" r="5" fill="#E0B15B"/>
+        <circle cx="292" cy="67" r="6" fill="#D6A34F"/>
+        <circle cx="139" cy="149" r="4" fill="#76A9C6"/>
+        <g fill="none" stroke="#90A9BA" strokeOpacity=".5">
+          <path d="M172 77H105L80 58H49"/>
+          <path d="M290 169H354L375 186H419"/>
+        </g>
+        <g fontFamily="monospace" fontSize="10" fill="#BDD1DF" letterSpacing="1">
+          <text x="48" y="49">SYSTEMS</text>
+          <text x="345" y="204">SOFTWARE</text>
+          <text x="48" y="212">THE OBSERVATORY // PORTFOLIO</text>
+        </g>
+      </svg>
+    ),
     'infrastructure-lab': (
       <svg viewBox="0 0 460 240" className="project-diagram diagram-infra" aria-hidden="true">
         <defs>
