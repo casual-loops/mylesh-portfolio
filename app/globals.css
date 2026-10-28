@@ -1525,3 +1525,28 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
 
 /* The two half-width highlights form one uninterrupted, wrapping progress segment. */
 .credential-progress-loop span { transition: none; }
+
+/* QueueForge project status, matching the shared project pill treatment. */
+.project-card-queueforge {
+  --status-color:#F0C66E;
+  --status-bg:rgba(91,66,20,.82);
+  --status-border:rgba(240,198,110,.48);
+}
+.queueforge-roadmap-subheading {
+  margin:42px 0 16px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+}
+.queueforge-roadmap-subheading h3 {
+  margin:0 0 10px;
+  font-family:var(--font-display);
+  font-size:clamp(25px,2.6vw,38px);
+  font-weight:400;
+  letter-spacing:-.035em;
+}
+.queueforge-roadmap-subheading p {
+  margin:0;
+  color:#B1BFCA;
+  line-height:1.65;
+  max-width:790px;
+}

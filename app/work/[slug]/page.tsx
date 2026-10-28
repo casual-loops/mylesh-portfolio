@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { projects } from '@/content/site';
 import DomainDoctorCaseStudy from './_components/domain-doctor-case-study';
 import TapestreeCaseStudy from './_components/tapestree-case-study';
+import QueueForgeCaseStudy from './_components/queueforge-case-study';
 import InfrastructureLabCaseStudy from './_components/infrastructure-lab-case-study';
 
 type ProjectParams = { params: Promise<{ slug: string }> };
@@ -28,6 +29,8 @@ export default async function ProjectDetail({ params }: ProjectParams) {
       return <DomainDoctorCaseStudy />;
     case 'tapestree':
       return <TapestreeCaseStudy />;
+    case 'queueforge':
+      return <QueueForgeCaseStudy />;
     case 'infrastructure-lab':
       return <InfrastructureLabCaseStudy />;
     default:
