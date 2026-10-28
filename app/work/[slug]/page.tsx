@@ -5,6 +5,7 @@ import { projects } from '@/content/site';
 import DomainDoctorCaseStudy from './_components/domain-doctor-case-study';
 import TapestreeCaseStudy from './_components/tapestree-case-study';
 import QueueForgeCaseStudy from './_components/queueforge-case-study';
+import PortfolioCaseStudy from './_components/portfolio-case-study';
 import InfrastructureLabCaseStudy from './_components/infrastructure-lab-case-study';
 
 type ProjectParams = { params: Promise<{ slug: string }> };
@@ -31,6 +32,8 @@ export default async function ProjectDetail({ params }: ProjectParams) {
       return <TapestreeCaseStudy />;
     case 'queueforge':
       return <QueueForgeCaseStudy />;
+    case 'the-observatory':
+      return <PortfolioCaseStudy />;
     case 'infrastructure-lab':
       return <InfrastructureLabCaseStudy />;
     default:
