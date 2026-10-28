@@ -83,9 +83,17 @@ export default function QueueForgeCaseStudy() {
       <section id="queueforge-roadmap" className="dd-story-section">
         <CaseStudySectionLabel index="03" title="PROJECT ROADMAP" />
         <Reveal className="dd-heading-row"><h2>One platform. <em>Increasing complexity.</em></h2><p>The 16-week course introduces components progressively, starting with Python and PostgreSQL before adding caching, messaging, scaling, and observability.</p></Reveal>
+        <Reveal className="queueforge-roadmap-subheading">
+          <h3>Implementation milestones</h3>
+          <p>Five progressive checkpoints from reproducing concurrency defects to assessing operational readiness.</p>
+        </Reveal>
         <div className="lab-domain-grid">
           {milestones.map(item => <Reveal key={item.number} className="lab-domain-card"><span>{item.number} // PLANNED MILESTONE</span><h3>{item.title}</h3><p>{item.detail}</p></Reveal>)}
         </div>
+        <Reveal className="queueforge-roadmap-subheading">
+          <h3>Engineering domains</h3>
+          <p>The technical disciplines developed throughout the course, from transactional correctness to observability and production operations.</p>
+        </Reveal>
         <div className="lab-domain-grid">
           {modules.map((item, index) => <Reveal key={item.title} className="lab-domain-card"><span>DOMAIN {String(index + 1).padStart(2, '0')} //</span><h3>{item.title}</h3><p>{item.detail}</p></Reveal>)}
         </div>
