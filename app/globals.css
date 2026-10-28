@@ -1550,3 +1550,13 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
   line-height:1.65;
   max-width:790px;
 }
+
+/* Portfolio project card styling, consistent with existing project treatments. */
+.project-card-the-observatory {
+  --status-color:#83E4AD;
+  --status-bg:rgba(20,75,47,.77);
+  --status-border:rgba(131,228,173,.45);
+}
+.art-the-observatory {
+  background:radial-gradient(circle at 50% 55%,rgba(70,137,181,.21),transparent 56%),linear-gradient(135deg,#111B28,#080E16);
+}
