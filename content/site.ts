@@ -33,6 +33,16 @@ export const projects: Project[] = [
     next:'Continue iterating on the product and documenting design tradeoffs.'
   },
   {
+    slug:'queueforge', name:'QueueForge', tagline:'Testing the limits of backend reliability.',
+    summary:'A progressive backend engineering lab investigating concurrency, database correctness, asynchronous processing, and distributed systems reliability.',
+    status:'In progress', areas:['Software','Infrastructure'], technologies:['Python','PostgreSQL','FastAPI','Docker'],
+    idea:'Reliable backend systems must behave correctly when requests overlap, dependencies fail, and traffic grows.',
+    approach:'Develop one job-processing platform through controlled experiments, failing tests, comparative implementations, and engineering reports.',
+    evidence:['Initial Python concurrency experiments and PostgreSQL schema','Docker Compose laboratory setup','16-week engineering roadmap with progressively introduced components'],
+    next:'Complete concurrency and transactional correctness labs, then extend the platform with verified database and distributed processing features.',
+    repo:'https://github.com/casual-loops/bdse-course'
+  },
+  {
     slug:'infrastructure-lab', name:'Infrastructure Lab', tagline:'A place to experiment.',
     summary:'My home environment for virtualization, containerization, networking, and hands-on systems exploration.',
     status:'Ongoing', areas:['Systems','Networking'], technologies:['Proxmox','Linux','Docker','Networking'],
