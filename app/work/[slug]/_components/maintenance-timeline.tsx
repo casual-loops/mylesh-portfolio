@@ -52,7 +52,13 @@ export default function MaintenanceTimeline({ events }: { events: readonly Maint
           <div><dt>Guests recovered</dt><dd>{selected.validation.guests_recovered} / {selected.validation.guests_expected}</dd></div>
           <div><dt>Monitored hosts observed up</dt><dd>{selected.validation.monitored_hosts_up} / {selected.validation.monitored_hosts_observed}</dd></div>
           <div><dt>Package upgrades</dt><dd>{formatCount(selected.maintenance.packages_upgraded)}</dd></div>
+          <div><dt>Package installations</dt><dd>{formatCount(selected.maintenance.packages_installed)}</dd></div>
+          <div><dt>Package removals / purges</dt><dd>{formatCount(selected.maintenance.packages_removed)} / {formatCount(selected.maintenance.packages_purged)}</dd></div>
           <div><dt>APT execution</dt><dd>{selected.maintenance.apt_execution_duration_seconds == null ? "Not recorded" : `${formatCount(selected.maintenance.apt_execution_duration_seconds)} cumulative seconds`}</dd></div>
+          <div><dt>APT systems collected</dt><dd>{formatCount(selected.maintenance.apt_systems_collected)}</dd></div>
+          <div><dt>Obsolete kernels removed</dt><dd>{selected.maintenance.obsolete_kernels_removed}</dd></div>
+          <div><dt>Guest backup archives observed</dt><dd>{selected.maintenance.guest_backup_archives_observed}</dd></div>
+          <div><dt>Storage integrity errors observed</dt><dd>{selected.validation.storage_integrity_errors}</dd></div>
           <div><dt>Restores verified</dt><dd>{formatCount(selected.maintenance.restore_tests_verified)}</dd></div>
           <div><dt>Overall maintenance duration</dt><dd>{selected.maintenance.maintenance_duration_minutes == null ? "Not recorded" : `${selected.maintenance.maintenance_duration_minutes} minutes`}</dd></div>
           <div><dt>Administrative closeout</dt><dd>{selected.validation.administrative_closeout_verified ? "Verified" : "Not verified"}</dd></div>
