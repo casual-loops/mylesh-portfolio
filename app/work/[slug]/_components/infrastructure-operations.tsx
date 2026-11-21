@@ -24,10 +24,10 @@ export default function InfrastructureOperations() {
         <Metric label="Maintenance events" value={String(summary.eventCount)} note="Recorded historical activities" />
         <Metric label="Guest recoveries" value={summary.guestRecoveriesObserved === null ? "Unknown" : String(summary.guestRecoveriesObserved)} note="Observed successful guest returns, summed by event" />
         <Metric label="APT package upgrades" value={summary.packagesUpgraded === null ? "Unknown" : summary.packagesUpgraded.toLocaleString("en-US")} note="Recorded operations, not distinct packages" />
-        <Metric label="Administrative closeout" value={summary.administrativeCloseoutPendingCount > 0 ? "Pending" : "Verified"} note={`${summary.administrativeCloseoutPendingCount} recorded event(s) pending formal closeout`} />
+        <Metric label="Obsolete kernels removed" value={summary.obsoleteKernelsRemoved === null ? "Unknown" : String(summary.obsoleteKernelsRemoved)} note="Observed maintenance cleanup operations" />
       </div>
       <p className="lab-operations-disclaimer">
-        Measurements are manually reviewed public snapshots, not an availability feed. Missing values remain unknown. A completed maintenance event does not establish formal closeout, verified restores, or uptime.
+        Measurements are manually reviewed public snapshots, not an availability feed. Missing values remain unknown. Event completion and guest recovery are not evidence of uptime or successful restore testing.
       </p>
       <MaintenanceTimeline events={events} />
     </div>
