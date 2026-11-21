@@ -1,4 +1,5 @@
-import { ArrowUpRight, Github } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import { GithubIcon } from '@/components/brand-icons';
 import { getGitHubActivity } from '@/lib/github-activity';
 
 const profileUrl = 'https://github.com/casual-loops';
@@ -33,7 +34,7 @@ export async function GitHubActivity() {
 
       <div className="github-activity-intro">
         <div>
-          <span className="github-activity-kicker"><Github size={18} aria-hidden="true" /> CASUAL-LOOPS / ACTIVITY</span>
+          <span className="github-activity-kicker"><GithubIcon size={18} aria-hidden="true" /> CASUAL-LOOPS / ACTIVITY</span>
           <h3>Learning in the open.</h3>
         </div>
         <p>Experiments, iterations, and code from the projects I build outside of work. A contribution calendar is one small window into that process, not a measure of engineering impact.</p>
@@ -73,7 +74,7 @@ export async function GitHubActivity() {
           </>
         ) : (
           <div className="github-activity-unavailable">
-            <Github size={25} aria-hidden="true" />
+            <GithubIcon size={25} aria-hidden="true" />
             <div>
               <strong>Follow the work on GitHub.</strong>
               <p>The live contribution calendar is currently unavailable. Repositories and ongoing activity are still accessible on my public profile.</p>
