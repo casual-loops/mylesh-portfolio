@@ -8,7 +8,11 @@ This is a **reviewed static snapshot** of the existing public publication contra
 - Canonical schema: [event.schema.json](https://github.com/casual-loops/homelab-infrastructure/blob/main/operations/public-metrics/event.schema.json)
 - First source record: [November 20, 2026](https://github.com/casual-loops/homelab-infrastructure/blob/main/operations/public-metrics/events/2026-11-20.json)
 - Local source snapshot: `event.schema.json` and `events/2026-11-20.json`
-- Every numeric value is a sanitized **observed count**, not a live query, extrapolation or independent verification by the portfolio.
+- All published numeric fields reflect approved observations, not live queries, extrapolations, or independent verification by the portfolio.
+- APT package counts represent **package operations**, not unique packages or security fixes.
+- `apt_execution_duration_seconds` sums APT transaction execution times, **not elapsed maintenance time**; concurrent transactions may overlap and retrospective collection may include unrelated transactions from those dates.
+- `apt_systems_collected` excludes appliances without APT; it is not a complete fleet count.
+- The November 20 record reports 192 upgrades, 18 installations, 12 removals, 7 purges, 784 cumulative APT execution seconds, and 10 APT systems collected. These values originate from the reviewed upstream publication.
 - `null` means not recorded or independently verified. It never means zero.
 - `outcome: completed` describes the maintenance work and is **not** confirmation of administrative closeout, restore testing or uptime.
 
