@@ -59,9 +59,6 @@ export default function MaintenanceTimeline({ events }: { events: readonly Maint
           <div><dt>Obsolete kernels removed</dt><dd>{selected.maintenance.obsolete_kernels_removed}</dd></div>
           <div><dt>Guest backup archives observed</dt><dd>{selected.maintenance.guest_backup_archives_observed}</dd></div>
           <div><dt>Storage integrity errors observed</dt><dd>{selected.validation.storage_integrity_errors}</dd></div>
-          <div><dt>Restores verified</dt><dd>{formatCount(selected.maintenance.restore_tests_verified)}</dd></div>
-          <div><dt>Overall maintenance duration</dt><dd>{selected.maintenance.maintenance_duration_minutes == null ? "Not recorded" : `${selected.maintenance.maintenance_duration_minutes} minutes`}</dd></div>
-          <div><dt>Administrative closeout</dt><dd>{selected.validation.administrative_closeout_verified ? "Verified" : "Not verified"}</dd></div>
         </dl>
         <details className="lab-history-method">
           <summary>Measurement scope and limitations</summary>
@@ -87,7 +84,6 @@ export default function MaintenanceTimeline({ events }: { events: readonly Maint
                     <tr><th scope="row">Systems maintained</th><td>{selected.systems.total}</td><td>{comparison.systems.total}</td></tr>
                     <tr><th scope="row">Guests recovered</th><td>{selected.validation.guests_recovered}</td><td>{comparison.validation.guests_recovered}</td></tr>
                     <tr><th scope="row">Package upgrades</th><td>{formatCount(selected.maintenance.packages_upgraded)}</td><td>{formatCount(comparison.maintenance.packages_upgraded)}</td></tr>
-                    <tr><th scope="row">Closeout</th><td>{selected.validation.administrative_closeout_verified ? "Verified" : "Pending"}</td><td>{comparison.validation.administrative_closeout_verified ? "Verified" : "Pending"}</td></tr>
                   </tbody>
                 </table>
               </div>
