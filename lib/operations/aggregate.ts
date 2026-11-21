@@ -1,5 +1,5 @@
-import type { MaintenanceEvent } from "@/content/operations/schema";
-import { validateMaintenanceEvents } from "./validate";
+import type { MaintenanceEvent } from "../../content/operations/schema.ts";
+import { validateMaintenanceEvents } from "./validate.ts";
 
 /**
  * Historical activity counts are not uptime, fleet size or unique asset counts.
