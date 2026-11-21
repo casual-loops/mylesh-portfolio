@@ -47,7 +47,7 @@ export default function InfrastructureScene({ event }: { event: MaintenanceEvent
         const counts = [event.systems.hypervisors, event.systems.virtual_machines, event.systems.containers];
         const radii = [1.4, 2.4, 3.45];
         const nodeGeometry = new THREE.SphereGeometry(0.11, 12, 10);
-        const ringGeometry: THREE.BufferGeometry[] = [];
+        const ringGeometry: Array<InstanceType<typeof THREE.BufferGeometry>> = [];
 
         counts.forEach((count, group) => {
           const radius = radii[group];
@@ -111,7 +111,11 @@ export default function InfrastructureScene({ event }: { event: MaintenanceEvent
           canvas.removeEventListener("pointerup", up);
           canvas.removeEventListener("pointercancel", up);
           root.traverse((object) => {
-            if (object instanceof THREE.Line) (object.material as THREE.Material).dispose();
+            if (object instanceof THREE.Line) {
+              const material = object.material;
+              if (Array.isArray(material)) material.forEach((m) => m.dispose());
+              else material.dispose();
+            }
           });
           ringGeometry.forEach((g) => g.dispose());
           nodeGeometry.dispose();
