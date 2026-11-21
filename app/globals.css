@@ -1671,3 +1671,13 @@ body:before{background-image:radial-gradient(#b8c1cb .55px,transparent .8px);opa
 @media(max-width:750px){.lab-history-detail{grid-template-columns:1fr;}.lab-event-list{display:flex;overflow-x:auto;padding-bottom:8px;}.lab-event-button{min-width:185px;}.lab-orbit-frame{height:260px;}}
 @media(max-width:480px){.lab-metrics-grid{grid-template-columns:1fr;}.lab-metric,.lab-metric:nth-child(2){border-right:0;border-bottom:1px solid var(--line);}.lab-metric:last-child{border-bottom:0;}.lab-history-facts{grid-template-columns:1fr;}.lab-history-facts>div{border-right:0;}.lab-history-caption{font-size:10px;}}
 @media(prefers-reduced-motion:reduce){.lab-event-button{transition:none;}}
+
+.lab-comparison{padding:20px clamp(18px,2.4vw,35px);border-bottom:1px solid var(--line);}
+.lab-comparison>label{display:block;font:12px monospace;color:#adc9d9;letter-spacing:.06em;margin-bottom:10px;}
+.lab-comparison select{width:min(100%,360px);background:#102132;color:#e1edf5;border:1px solid var(--line);padding:12px;font:14px Arial,Helvetica,sans-serif;}
+.lab-comparison select:focus-visible{outline:2px solid #b5dfff;outline-offset:3px;}
+.lab-comparison-table{overflow-x:auto;}
+.lab-comparison-table p{font-size:12px;color:#a1b7c5;margin:20px 0 8px;}
+.lab-comparison-table table{width:100%;border-collapse:collapse;min-width:450px;font-size:13px;color:#c7d9e4;text-align:left;}
+.lab-comparison-table th,.lab-comparison-table td{padding:11px 12px;border-bottom:1px solid var(--line);font-weight:400;}
+.lab-comparison-table thead th{font:11px monospace;color:#99b8cb;}
