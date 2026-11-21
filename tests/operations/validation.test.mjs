@@ -10,7 +10,8 @@ const copy = () => structuredClone(recorded);
 test("accepts the canonical, reviewed public record", () => {
   assert.deepEqual(validateMaintenanceEvent(copy()), recorded);
   assert.equal(recorded.validation.administrative_closeout_verified, false);
-  assert.equal(recorded.maintenance.packages_upgraded, null);
+  assert.equal(recorded.maintenance.packages_upgraded, 192);
+  assert.equal(recorded.maintenance.apt_execution_duration_seconds, 784);
 });
 
 test("rejects unexpected top-level and nested fields", () => {
@@ -18,6 +19,22 @@ test("rejects unexpected top-level and nested fields", () => {
   assert.throws(() => validateMaintenanceEvent(top), /unapproved field/);
   const nested = copy(); nested.systems.internal_address = "private";
   assert.throws(() => validateMaintenanceEvent(nested), /unapproved field/);
+});
+
+test("rejects non-allowlisted fields and invalid APT metrics", () => {
+  const arbitrary = copy(); arbitrary.maintenance.private_transaction_logs = ["secret"];
+  assert.throws(() => validateMaintenanceEvent(arbitrary), /unapproved field/);
+  const fractional = copy(); fractional.maintenance.packages_installed = 1.5;
+  assert.throws(() => validateMaintenanceEvent(fractional), /invalid type/);
+  const negative = copy(); negative.maintenance.apt_execution_duration_seconds = -1;
+  assert.throws(() => validateMaintenanceEvent(negative), /below minimum/);
+});
+
+test("preserves unrecorded APT measurements as unknown", () => {
+  const unrecorded = copy(); delete unrecorded.maintenance.packages_installed;
+  const summary = aggregateMaintenanceEvents([unrecorded]);
+  assert.equal(summary.packagesInstalled, null);
+  assert.equal(summary.packagesUpgraded, 192);
 });
 
 test("rejects invalid values and missing fields", () => {
@@ -52,7 +69,12 @@ test("aggregates observed counts without inventing unknown measurements", () => 
   assert.equal(summary.completedCount, 1);
   assert.equal(summary.administrativeCloseoutPendingCount, 1);
   assert.equal(summary.guestRecoveriesObserved, 10);
-  assert.equal(summary.packagesUpgraded, null);
+  assert.equal(summary.packagesUpgraded, 192);
+  assert.equal(summary.packagesInstalled, 18);
+  assert.equal(summary.packagesRemoved, 12);
+  assert.equal(summary.packagesPurged, 7);
+  assert.equal(summary.aptExecutionDurationSeconds, 784);
+  assert.deepEqual(summary.aptSystemsCollectedByEvent, [{ date: "2026-11-20", count: 10 }]);
   assert.equal(summary.totalDurationMinutes, null);
   assert.equal(summary.verifiedRestoreTests, null);
 });
