@@ -19,6 +19,13 @@ export function aggregateMaintenanceEvents(inputs: readonly unknown[]) {
     guestRecoveriesObserved: observedSum((event) => event.validation.guests_recovered),
     obsoleteKernelsRemoved: observedSum((event) => event.maintenance.obsolete_kernels_removed),
     packagesUpgraded: observedSum((event) => event.maintenance.packages_upgraded),
+    packagesInstalled: observedSum((event) => event.maintenance.packages_installed ?? null),
+    packagesRemoved: observedSum((event) => event.maintenance.packages_removed ?? null),
+    packagesPurged: observedSum((event) => event.maintenance.packages_purged ?? null),
+    // Sum of APT transaction runtimes, NOT elapsed maintenance duration.
+    aptExecutionDurationSeconds: observedSum((event) => event.maintenance.apt_execution_duration_seconds ?? null),
+    // Coverage count applies to the reported collection, not distinct fleet size across events.
+    aptSystemsCollectedByEvent: events.map((event) => ({ date: event.date, count: event.maintenance.apt_systems_collected ?? null })),
     totalDurationMinutes: observedSum((event) => event.maintenance.maintenance_duration_minutes),
     verifiedRestoreTests: observedSum((event) => event.maintenance.restore_tests_verified),
   };
