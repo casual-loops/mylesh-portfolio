@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
+import { selectMaintenanceEvent } from "@/lib/operations/selection";
 import type { MaintenanceEvent } from "@/content/operations/schema";
 import InfrastructureScene from "./infrastructure-scene";
 
@@ -11,7 +12,7 @@ const dateLabel = (date: string) => new Intl.DateTimeFormat("en-US", {
 
 export default function MaintenanceTimeline({ events }: { events: readonly MaintenanceEvent[] }) {
   const [selectedId, setSelectedId] = useState(events[events.length - 1]?.id ?? "");
-  const selected = useMemo(() => events.find((event) => event.id === selectedId) ?? events[events.length - 1], [events, selectedId]);
+  const selected = selectMaintenanceEvent(events, selectedId);
 
   if (!selected) return <p className="lab-empty">No reviewed maintenance records have been published.</p>;
 
