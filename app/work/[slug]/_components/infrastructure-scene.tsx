@@ -51,7 +51,7 @@ export default function InfrastructureScene({ event }: { event: MaintenanceEvent
 
         counts.forEach((count, group) => {
           const radius = radii[group];
-          const points: THREE.Vector3[] = [];
+          const points: InstanceType<typeof THREE.Vector3>[] = [];
           for (let i = 0; i <= 120; i++) {
             const angle = i / 120 * Math.PI * 2;
             points.push(new THREE.Vector3(Math.cos(angle) * radius, 0, Math.sin(angle) * radius));
