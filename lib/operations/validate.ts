@@ -1,5 +1,5 @@
-import eventSchema from "@/content/operations/event.schema.json";
-import type { MaintenanceEvent } from "@/content/operations/schema";
+import eventSchema from "../../content/operations/event.schema.json" with { type: "json" };
+import type { MaintenanceEvent } from "../../content/operations/schema.ts";
 
 type SchemaNode = {
   type?: string | string[];
