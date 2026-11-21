@@ -11,7 +11,7 @@
     "validate:operations": "node --experimental-strip-types scripts/check-operations-publication.mjs"
   },
   "dependencies": {
-    "lucide-react": "^0.468.0",
+    "lucide-react": "^1.77.0",
     "motion": "^14.14.0",
     "next": "^16.4.6",
     "react": "^19.0.0",
