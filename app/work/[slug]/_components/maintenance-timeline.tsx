@@ -12,7 +12,9 @@ const dateLabel = (date: string) => new Intl.DateTimeFormat("en-US", {
 
 export default function MaintenanceTimeline({ events }: { events: readonly MaintenanceEvent[] }) {
   const [selectedId, setSelectedId] = useState(events[events.length - 1]?.id ?? "");
+  const [compareId, setCompareId] = useState("");
   const selected = selectMaintenanceEvent(events, selectedId);
+  const comparison = compareId ? events.find((event) => event.id === compareId) : undefined;
 
   if (!selected) return <p className="lab-empty">No reviewed maintenance records have been published.</p>;
 
@@ -61,6 +63,31 @@ export default function MaintenanceTimeline({ events }: { events: readonly Maint
           <p>Missing or unverified data is never counted as zero. Neither guest recovery nor backup archive presence establishes a successful restore test.</p>
           <a href="https://github.com/casual-loops/homelab-infrastructure/tree/main/operations/public-metrics" target="_blank" rel="noopener noreferrer">Review public source records</a>
         </details>
+        {events.length > 1 && (
+          <div className="lab-comparison">
+            <label htmlFor="lab-compare-select">Compare with another maintenance record</label>
+            <select id="lab-compare-select" value={compareId} onChange={(event) => setCompareId(event.target.value)}>
+              <option value="">No comparison</option>
+              {events.filter((event) => event.id !== selected.id).map((event) =>
+                <option key={event.id} value={event.id}>{dateLabel(event.date)}</option>
+              )}
+            </select>
+            {comparison && (
+              <div className="lab-comparison-table">
+                <p>Historical observations, not an uptime or performance benchmark</p>
+                <table>
+                  <thead><tr><th scope="col">Measurement</th><th scope="col">{dateLabel(selected.date)}</th><th scope="col">{dateLabel(comparison.date)}</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Systems maintained</th><td>{selected.systems.total}</td><td>{comparison.systems.total}</td></tr>
+                    <tr><th scope="row">Guests recovered</th><td>{selected.validation.guests_recovered}</td><td>{comparison.validation.guests_recovered}</td></tr>
+                    <tr><th scope="row">Package upgrades</th><td>{formatCount(selected.maintenance.packages_upgraded)}</td><td>{formatCount(comparison.maintenance.packages_upgraded)}</td></tr>
+                    <tr><th scope="row">Closeout</th><td>{selected.validation.administrative_closeout_verified ? "Verified" : "Pending"}</td><td>{comparison.validation.administrative_closeout_verified ? "Verified" : "Pending"}</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        )}
         <InfrastructureScene event={selected} />
       </div>
     </div>
