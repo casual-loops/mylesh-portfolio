@@ -44,5 +44,10 @@ export interface MaintenanceEvent {
     restore_tests_verified: number | null;
     packages_upgraded: number | null;
     maintenance_duration_minutes: number | null;
+    packages_installed?: number | null;
+    packages_removed?: number | null;
+    packages_purged?: number | null;
+    apt_execution_duration_seconds?: number | null;
+    apt_systems_collected?: number | null;
   };
 }
