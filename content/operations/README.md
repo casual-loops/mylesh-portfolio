@@ -20,9 +20,11 @@ This is a **reviewed static snapshot** of the existing public publication contra
 
 1. Review primary evidence privately and approve a sanitized public event in the source repository.
 2. Copy **only** approved schema fields and reviewed event JSON into this portfolio repository.
-3. Run `npm run test:operations`, `npm run lint` and `npm run build`.
+3. Run `npm run validate:operations`, `npm run test:operations`, `npm run lint` and `npm run build`.
 4. Review the diff for inadvertent topology, identifiers, addresses, endpoints, sensitive descriptions, logs, fingerprints or secrets.
 5. Publish via a reviewed PR; do not automatically synchronize the public repository or connect the site to private infrastructure.
 6. Preserve historical events; any correction must be an explicit, documented change through code review.
 
 This snapshot does not contain a live host inventory and must never be presented as a live operational feed. Point-in-time monitoring health does not measure availability or uptime.
+
+See [PUBLICATION.md](PUBLICATION.md) for the complete review and publication process.

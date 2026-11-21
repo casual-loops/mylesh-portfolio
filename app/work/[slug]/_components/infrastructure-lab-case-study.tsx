@@ -2,6 +2,7 @@ import { CaseStudyBackLink, CaseStudyNavigation, CaseStudySectionLabel } from '.
 import Link from 'next/link';
 import { ArrowUpRight, Server, Network, Activity, Database, ShieldCheck, GitBranch } from 'lucide-react';
 import { Reveal } from '@/components/reveal';
+import InfrastructureOperations from './infrastructure-operations';
 
 const domains = [
   { number: '01', title: 'Virtualization & compute', detail: 'Proxmox VE hosts Linux containers and virtual machines for infrastructure, home automation, private applications, and development.', terms: 'Proxmox VE · Linux · Docker Compose' },
@@ -55,7 +56,7 @@ export default function InfrastructureLabCaseStudy() {
         </div>
       </header>
 
-      <CaseStudyNavigation sections={[{"id":"lab-why","label":"Why I built it"},{"id":"lab-architecture","label":"Architecture"},{"id":"lab-operations","label":"Operations"},{"id":"lab-learning","label":"What it teaches me"}]} />
+      <CaseStudyNavigation sections={[{"id":"lab-why","label":"Why I built it"},{"id":"lab-architecture","label":"Architecture"},{"id":"lab-operations","label":"Operations"},{"id":"lab-history","label":"Operational history"},{"id":"lab-learning","label":"What it teaches me"}]} />
 
       <section id="lab-why" className="dd-story-section">
         <CaseStudySectionLabel index="01" title="WHY I BUILT IT" />
@@ -106,8 +107,14 @@ export default function InfrastructureLabCaseStudy() {
         </div>
       </section>
 
+      <section id="lab-history" className="dd-story-section">
+        <CaseStudySectionLabel index="04" title="OPERATIONAL HISTORY" />
+        <Reveal className="dd-heading-row"><h2>Operations measured. <em>Outcomes documented.</em></h2><p>Selected maintenance history is published as reviewed, sanitized records. The figures distinguish observed work, incomplete verification, and measurements that were never recorded.</p></Reveal>
+        <InfrastructureOperations />
+      </section>
+
       <section id="lab-learning" className="dd-story-section">
-        <CaseStudySectionLabel index="04" title="WHAT IT TEACHES ME" />
+        <CaseStudySectionLabel index="05" title="WHAT IT TEACHES ME" />
         <Reveal className="dd-story-split">
           <h2>One change can touch <em>every layer.</em></h2>
           <div className="dd-prose">
