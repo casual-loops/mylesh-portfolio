@@ -6,12 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "test:operations": "node --experimental-strip-types --test tests/operations/*.test.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
     "motion": "^12.43.0",
-    "next": "^16.0.0",
+    "next": "^16.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
